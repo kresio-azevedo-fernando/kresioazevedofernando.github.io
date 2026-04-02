@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#09090f;--bg2:#0f0f1a;--bg3:#141420;--bg4:#1a1a28;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#e8e8f0;--text2:#9494a8;--text3:#5a5a72;--accent:#bb9476;--accent2:#bd865c;--accent-dim:rgba(194, 120, 10, 0.12);--accent-glow:rgba(156, 102, 32, 0.32);--gold:#c8a96e;--blue:#6eb5ff}
+:root{--bg:#09090f;--bg2:#0f0f1a;--bg3:#141420;--bg4:#1a1a28;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#e8e8f0;--text2:#9494a8;--text3:#5a5a72;--accent:#bb9476;--accent2:#bd865c;--accent-dim:rgba(194,120,10,0.12);--accent-glow:rgba(156,102,32,0.32);--gold:#c8a96e;--blue:#6eb5ff}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
@@ -23,12 +23,21 @@ nav.scrolled{background:rgba(9,9,15,0.94);backdrop-filter:blur(16px);border-bott
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-family:'DM Mono',monospace;font-size:11px;color:var(--text2);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:1rem}
 .nav-cta{font-family:'DM Mono',monospace;font-size:11px;padding:8px 18px;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:2px;text-decoration:none;letter-spacing:.06em;transition:all .2s}
 .nav-cta:hover{background:var(--accent);color:#000}
 
+/* LANG SWITCHER */
+.lang-switcher{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:4px 5px}
+.lang-switcher svg{color:var(--text3);flex-shrink:0}
+.lang-btn{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.07em;padding:4px 9px;border-radius:2px;border:none;background:transparent;color:var(--text3);cursor:pointer;transition:all .2s;text-transform:uppercase}
+.lang-btn.active{background:var(--accent);color:#000}
+.lang-btn:not(.active):hover{color:var(--text);background:var(--bg4)}
+.lang-sep{color:var(--border2);font-size:10px;user-select:none}
+
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;padding:0 5%;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-20%;right:-5%;width:700px;height:700px;background:radial-gradient(circle,rgba(216, 136, 17, 0.04) 0%,transparent 65%);pointer-events:none}
+.hero::before{content:'';position:absolute;top:-20%;right:-5%;width:700px;height:700px;background:radial-gradient(circle,rgba(216,136,17,0.04) 0%,transparent 65%);pointer-events:none}
 .hero-inner{max-width:780px}
 .hero-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;opacity:0;animation:fadeUp .6s .15s ease both}
 .hero-tag::before{content:'';width:28px;height:1px;background:var(--accent)}
@@ -63,7 +72,7 @@ section{padding:6.5rem 5%}
 .sk-wrap{display:flex;flex-wrap:wrap;gap:.4rem}
 .sk{font-family:'DM Mono',monospace;font-size:10px;padding:4px 10px;border-radius:2px;border:1px solid var(--border2);color:var(--text2);background:var(--bg3);transition:all .2s;cursor:default}
 .sk:hover{border-color:var(--accent);color:var(--accent)}
-.sk.hi{border-color:rgba(155, 115, 70, 0.28);color:var(--accent);background:var(--accent-dim)}
+.sk.hi{border-color:rgba(155,115,70,0.28);color:var(--accent);background:var(--accent-dim)}
 .stat-col{display:flex;flex-direction:column;gap:1rem}
 .stat-it{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:1.1rem 1.35rem;display:flex;justify-content:space-between;align-items:center;transition:border-color .2s}
 .stat-it:hover{border-color:var(--border2)}
@@ -81,13 +90,13 @@ section{padding:6.5rem 5%}
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.4rem}
 .pcard{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .3s;position:relative}
 .pcard::before{content:'';position:absolute;inset:0;border-radius:6px;opacity:0;background:linear-gradient(135deg,var(--accent-glow),transparent);transition:opacity .3s;pointer-events:none}
-.pcard:hover{border-color:rgba(212, 120, 0, 0.22);transform:translateY(-4px)}
+.pcard:hover{border-color:rgba(212,120,0,0.22);transform:translateY(-4px)}
 .pcard:hover::before{opacity:1}
 .ph{padding:1.4rem 1.4rem 0}
 .psec{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:.875rem}
 .sl{background:rgba(110,181,255,0.09);color:var(--blue);border:1px solid rgba(110,181,255,0.18)}
 .si{background:rgba(200,169,110,0.09);color:var(--gold);border:1px solid rgba(200,169,110,0.18)}
-.sc{background:rgba(212, 127, 0, 0.09);color:var(--accent);border:1px solid rgba(212, 120, 0, 0.18)}
+.sc{background:rgba(212,127,0,0.09);color:var(--accent);border:1px solid rgba(212,120,0,0.18)}
 .ptitle{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:.5rem;line-height:1.3}
 .pimp{font-family:'Outfit',sans-serif;font-size:1.55rem;font-weight:600;color:var(--accent);margin:.65rem 0 .3rem}
 .pimp-l{font-size:11px;color:var(--text3);margin-bottom:.875rem}
@@ -96,7 +105,7 @@ section{padding:6.5rem 5%}
 .star{border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:1.1rem}
 .sr{display:grid;grid-template-columns:78px 1fr;border-bottom:1px solid var(--border)}
 .sr:last-child{border-bottom:none}
-.sk2{font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);padding:.65rem .7rem;background:rgba(163, 121, 43, 0.04);display:flex;align-items:flex-start;padding-top:.75rem}
+.sk2{font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);padding:.65rem .7rem;background:rgba(163,121,43,0.04);display:flex;align-items:flex-start;padding-top:.75rem}
 .sv{font-size:12px;font-weight:300;color:var(--text2);padding:.65rem .7rem;line-height:1.55}
 .ptags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.1rem}
 .tt{font-family:'DM Mono',monospace;font-size:10px;padding:3px 7px;border-radius:2px;background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
@@ -104,7 +113,7 @@ section{padding:6.5rem 5%}
 .lb{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.03em;padding:7px 12px;border-radius:2px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.35rem}
 .lgh{border:1px solid var(--border2);color:var(--text2)}
 .lgh:hover{border-color:var(--accent);color:var(--accent)}
-.lpdf{border:1px solid rgba(212, 127, 0, 0.28);color:var(--accent);background:var(--accent-dim)}
+.lpdf{border:1px solid rgba(212,127,0,0.28);color:var(--accent);background:var(--accent-dim)}
 .lpdf:hover{background:var(--accent);color:#000}
 .lcs{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);border:1px dashed var(--border);padding:7px 10px;border-radius:2px}
 
@@ -117,7 +126,7 @@ section{padding:6.5rem 5%}
 .rq{font-size:12.5px;font-weight:300;font-style:italic;color:var(--text2);line-height:1.72;margin-bottom:1.25rem}
 .rdiv{height:1px;background:var(--border);margin-bottom:1.1rem}
 .rp{display:flex;align-items:center;gap:.7rem}
-.rav{width:38px;height:38px;border-radius:50%;background:var(--accent-dim);border:1px solid rgba(212, 138, 0, 0.25);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--accent);flex-shrink:0}
+.rav{width:38px;height:38px;border-radius:50%;background:var(--accent-dim);border:1px solid rgba(212,138,0,0.25);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--accent);flex-shrink:0}
 .rn{font-size:13px;font-weight:500;color:var(--text)}
 .rr{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.03em;margin-top:2px}
 .re{font-size:11px;color:var(--accent);text-decoration:none;margin-top:3px;display:block;opacity:.65;transition:opacity .2s}
@@ -143,8 +152,6 @@ section{padding:6.5rem 5%}
 .cemail a{color:var(--accent);text-decoration:none;transition:opacity .2s}
 .cemail a:hover{opacity:.7}
 .clinks{display:flex;justify-content:center;gap:.875rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.mkts{display:flex;justify-content:center;gap:.65rem;flex-wrap:wrap;margin-top:1.75rem}
-.mt{font-family:'DM Mono',monospace;font-size:11px;padding:5px 13px;border-radius:2px;background:var(--accent-dim);color:var(--accent);border:1px solid rgba(155, 119, 52, 0.2)}
 
 /* FOOTER */
 footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--text3)}
@@ -174,24 +181,32 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
 <nav id="nb">
   <a href="#" class="nav-logo">kresio.fernando</a>
   <ul class="nav-links">
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#projetos">Projetos</a></li>
-    <li><a href="#recomendacoes">Recomendações</a></li>
-    <li><a href="#experiencia">Experiência</a></li>
-    <li><a href="#contato">Contato</a></li>
+    <li><a href="#sobre" data-i18n="nav.sobre">Sobre</a></li>
+    <li><a href="#projetos" data-i18n="nav.projetos">Projetos</a></li>
+    <li><a href="#recomendacoes" data-i18n="nav.rec">Recomendações</a></li>
+    <li><a href="#experiencia" data-i18n="nav.exp">Experiência</a></li>
+    <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
   </ul>
-  <a href="mailto:kresiofernando@hotmail.com" class="nav-cta">Contactar</a>
+  <div class="nav-right">
+    <div class="lang-switcher" title="Idioma / Language">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+      <button class="lang-btn active" id="btn-pt" onclick="setLang('pt')">PT</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="mailto:kresiofernando@hotmail.com" class="nav-cta" data-i18n="nav.cta">Contactar</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-tag">Analista de Dados · BI · Negócios</div>
+    <div class="hero-tag" data-i18n="hero.tag">Analista de Dados · BI · Negócios</div>
     <h1 class="hero-name">Kresio<br><span>Fernando</span></h1>
-    <p class="hero-role">Data & BI Business Analyst</p>
-    <p class="hero-desc">Transformo dados em decisões que geram impacto mensurável. Do diagnóstico à ação — análise descritiva, diagnóstica e prescritiva reforçada por modelos de otimização matemática.</p>
+    <p class="hero-role" data-i18n="hero.role">Data & BI Business Analyst</p>
+    <p class="hero-desc" data-i18n="hero.desc">Transformo dados em decisões que geram impacto mensurável. Do diagnóstico à ação — análise descritiva, diagnóstica e prescritiva reforçada por modelos de otimização matemática.</p>
     <div class="hero-btns">
-      <a href="#projetos" class="btn-p">Ver Projetos</a>
+      <a href="#projetos" class="btn-p" data-i18n="hero.btn1">Ver Projetos</a>
       <a href="https://www.linkedin.com/in/kresio-data-bi-business-analyst/" target="_blank" class="btn-g">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         LinkedIn
@@ -203,9 +218,9 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
     </div>
   </div>
   <div class="hero-numbers">
-    <div class="num-card"><div class="num-val">€1.37B</div><div class="num-label">Impacto · Logística</div></div>
-    <div class="num-card"><div class="num-val">€5.8M</div><div class="num-label">Impacto · Imobiliário</div></div>
-    <div class="num-card"><div class="num-val">€45.2K</div><div class="num-label">Impacto · Café</div></div>
+    <div class="num-card"><div class="num-val">€1.37B</div><div class="num-label" data-i18n="hero.n1">Impacto · Logística</div></div>
+    <div class="num-card"><div class="num-val">€5.8M</div><div class="num-label" data-i18n="hero.n2">Impacto · Imobiliário</div></div>
+    <div class="num-card"><div class="num-val">€45.2K</div><div class="num-label" data-i18n="hero.n3">Impacto · Café</div></div>
   </div>
 </section>
 
@@ -213,34 +228,39 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
 <section id="sobre">
   <div class="sobre-grid">
     <div>
-      <div class="s-tag reveal">Sobre Mim</div>
-      <h2 class="s-title reveal">Dados que<br>movem decisões</h2>
+      <div class="s-tag reveal" data-i18n="sobre.tag">Sobre Mim</div>
+      <h2 class="s-title reveal" data-i18n="sobre.title">Dados que<br>movem decisões</h2>
       <div class="sobre-text reveal">
-        <p>Sou <strong>Kresio Azevedo Fernando</strong>, Analista de Dados, BI e Negócios focado em transformar dados brutos em decisões estratégicas com impacto financeiro mensurável.</p>
-        <p>A minha abordagem cobre os três níveis: <strong>descritiva</strong> (o que aconteceu), <strong>diagnóstica</strong> (porque aconteceu) e <strong>prescritiva</strong> (o que fazer) — com a diferença de aplicar modelos de <strong>Investigação Operacional</strong> (Simplex e Dijkstra) para maximizar o impacto das recomendações.</p>
-        <p>Comunicação plena e proficiência técnica em <strong>português, inglês e francês</strong>, assegurando fluidez estratégica em operações globais e na análise de dados multiculturais.</p>
-        <div class="sk-label">Competências técnicas</div>
+        <p data-i18n="sobre.p1">Sou <strong>Kresio Azevedo Fernando</strong>, Analista de Dados, BI e Negócios focado em transformar dados brutos em decisões estratégicas com impacto financeiro mensurável.</p>
+        <p data-i18n="sobre.p2">A minha abordagem cobre os três níveis: <strong>descritiva</strong> (o que aconteceu), <strong>diagnóstica</strong> (porque aconteceu) e <strong>prescritiva</strong> (o que fazer) — com a diferença de aplicar modelos de <strong>Investigação Operacional</strong> (Simplex e Dijkstra) para maximizar o impacto das recomendações.</p>
+        <p data-i18n="sobre.p3">Comunicação plena e proficiência técnica em <strong>português, inglês e francês</strong>, assegurando fluidez estratégica em operações globais e na análise de dados multiculturais.</p>
+        <div class="sk-label" data-i18n="sobre.sklabel">Competências técnicas</div>
         <div class="sk-wrap">
           <span class="sk hi">SQL</span><span class="sk hi">Power BI</span><span class="sk hi">Excel</span>
           <span class="sk hi">Simplex</span><span class="sk hi">Dijkstra</span>
-          <span class="sk">Análise Descritiva</span><span class="sk">Análise Diagnóstica</span>
-          <span class="sk">Análise Prescritiva</span><span class="sk">Estatística Descritiva</span>
-          <span class="sk">Programação Linear</span><span class="sk">Teoria dos Grafos</span>
-          <span class="sk">DAX</span><span class="sk">Limpeza de Dados</span>
-          <span class="sk">Tabelas Dinâmicas</span><span class="sk">Executive Reporting</span>
+          <span class="sk" data-i18n="sk.desc">Análise Descritiva</span>
+          <span class="sk" data-i18n="sk.diag">Análise Diagnóstica</span>
+          <span class="sk" data-i18n="sk.presc">Análise Prescritiva</span>
+          <span class="sk" data-i18n="sk.stat">Estatística Descritiva</span>
+          <span class="sk" data-i18n="sk.pl">Programação Linear</span>
+          <span class="sk" data-i18n="sk.grafos">Teoria dos Grafos</span>
+          <span class="sk">DAX</span>
+          <span class="sk" data-i18n="sk.clean">Limpeza de Dados</span>
+          <span class="sk" data-i18n="sk.pivot">Tabelas Dinâmicas</span>
+          <span class="sk">Executive Reporting</span>
         </div>
       </div>
     </div>
     <div class="stat-col reveal">
-      <div class="stat-it"><span class="sit-l">Projetos no portfolio</span><span class="sit-v">3+</span></div>
-      <div class="stat-it"><span class="sit-l">Oportunidades identificadas</span><span class="sit-v">€1.4B+</span></div>
-      <div class="stat-it"><span class="sit-l">ROI médio dos modelos</span><span class="sit-v">370%</span></div>
-      <div class="stat-it"><span class="sit-l">Recomendações recebidas</span><span class="sit-v">4</span></div>
+      <div class="stat-it"><span class="sit-l" data-i18n="stats.proj">Projetos no portfolio</span><span class="sit-v">3+</span></div>
+      <div class="stat-it"><span class="sit-l" data-i18n="stats.opp">Oportunidades identificadas</span><span class="sit-v">€1.4B+</span></div>
+      <div class="stat-it"><span class="sit-l" data-i18n="stats.roi">ROI médio dos modelos</span><span class="sit-v">370%</span></div>
+      <div class="stat-it"><span class="sit-l" data-i18n="stats.rec">Recomendações recebidas</span><span class="sit-v">4</span></div>
       <div class="mini-block">
-        <div class="mb-title">Idiomas</div>
-        <div class="mb-row"><span class="mb-k">Português</span><span class="mb-v">Nativo</span></div>
-        <div class="mb-row"><span class="mb-k">English</span><span class="mb-v">Profissional</span></div>
-        <div class="mb-row"><span class="mb-k">Français</span><span class="mb-v">Profissional</span></div>
+        <div class="mb-title" data-i18n="lang.title">Idiomas</div>
+        <div class="mb-row"><span class="mb-k">Português</span><span class="mb-v" data-i18n="lang.pt">Nativo</span></div>
+        <div class="mb-row"><span class="mb-k">English</span><span class="mb-v" data-i18n="lang.en">Profissional</span></div>
+        <div class="mb-row"><span class="mb-k">Français</span><span class="mb-v" data-i18n="lang.fr">Profissional</span></div>
       </div>
     </div>
   </div>
@@ -248,88 +268,91 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
 
 <!-- PROJETOS -->
 <section id="projetos">
-  <div class="s-tag reveal">Portfolio</div>
-  <h2 class="s-title reveal">Projetos com<br>impacto real</h2>
-  <p class="s-sub reveal">Cada projeto entrega análise descritiva, diagnóstica e prescritiva com ações concretas e impacto financeiro quantificado.</p>
+  <div class="s-tag reveal" data-i18n="proj.tag">Portfolio</div>
+  <h2 class="s-title reveal" data-i18n="proj.title">Projetos com<br>impacto real</h2>
+  <p class="s-sub reveal" data-i18n="proj.sub">Cada projeto entrega análise descritiva, diagnóstica e prescritiva com ações concretas e impacto financeiro quantificado.</p>
   <div class="proj-grid">
 
+    <!-- LOGÍSTICA -->
     <div class="pcard reveal">
       <div class="ph">
-        <span class="psec sl">Logística</span>
-        <h3 class="ptitle">Otimização Logística com Investigação Operacional</h3>
+        <span class="psec sl" data-i18n="p1.sector">Logística</span>
+        <h3 class="ptitle" data-i18n="p1.title">Otimização Logística com Investigação Operacional</h3>
         <div class="pimp">+€320M</div>
-        <div class="pimp-l">ganho adicional com Simplex + Dijkstra (+30%)</div>
+        <div class="pimp-l" data-i18n="p1.implab">ganho adicional com Simplex + Dijkstra (+30%)</div>
       </div>
       <div class="pb">
-        <p class="pdesc">Armazém com 3.204 produtos, taxa de atendimento de 80% e 14.746 ruturas/mês. A aplicação de modelos matemáticos elevou o impacto de €1,05B para €1,37B.</p>
+        <p class="pdesc" data-i18n="p1.desc">Armazém com 3.204 produtos, taxa de atendimento de 80% e 14.746 ruturas/mês. A aplicação de modelos matemáticos elevou o impacto de €1,05B para €1,37B.</p>
         <div class="star">
-          <div class="sr"><div class="sk2">Situação</div><div class="sv">Custo logístico €17,7B/ano. Atendimento 80%, ruturas a gerar €630M/ano em perdas de receita.</div></div>
-          <div class="sr"><div class="sk2">Tarefa</div><div class="sv">Identificar causas das ruturas e otimizar stocks, layout e rotas com modelos matemáticos.</div></div>
-          <div class="sr"><div class="sk2">Ações</div><div class="sv">Simplex: níveis ótimos de stock (-23% excedente). Dijkstra: rotas de picking (-32% distância). Transporte: 177 → 51 rotas.</div></div>
-          <div class="sr"><div class="sk2">Resultado</div><div class="sv">€1,37B identificados. ROI 420%. Lead time: 6,0 → 4,3 dias.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.s">Situação</div><div class="sv" data-i18n="p1.s">Custo logístico €17,7B/ano. Atendimento 80%, ruturas a gerar €630M/ano em perdas de receita.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.t">Tarefa</div><div class="sv" data-i18n="p1.t">Identificar causas das ruturas e otimizar stocks, layout e rotas com modelos matemáticos.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.a">Ações</div><div class="sv" data-i18n="p1.a">Simplex: níveis ótimos de stock (-23% excedente). Dijkstra: rotas de picking (-32% distância). Transporte: 177 → 51 rotas.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.r">Resultado</div><div class="sv" data-i18n="p1.r">€1,37B identificados. ROI 420%. Lead time: 6,0 → 4,3 dias.</div></div>
         </div>
-        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Dijkstra</span><span class="tt">Prog. Linear</span></div>
+        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Dijkstra</span><span class="tt" data-i18n="tag.pl">Prog. Linear</span></div>
         <div class="plinks">
           <a href="https://github.com/kresio-azevedo-fernando/projecto-logistica" target="_blank" class="lb lgh">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Repositório
+            <span data-i18n="btn.repo">Repositório</span>
           </a>
-          <a href="https://github.com/kresio-azevedo-fernando/projecto-logistica/blob/main/LOGISTICS%20OPTIMIZATION%20REPORT.pdf" target="_blank" class="lb lpdf">Relatório PDF</a>
-          <span class="lcs">Dashboard · em breve</span>
+          <a href="https://github.com/kresio-azevedo-fernando/projecto-logistica/blob/main/LOGISTICS%20OPTIMIZATION%20REPORT.pdf" target="_blank" class="lb lpdf" data-i18n="btn.pdf">Relatório PDF</a>
+          <span class="lcs" data-i18n="btn.dash">Dashboard · em breve</span>
         </div>
       </div>
     </div>
 
+    <!-- IMOBILIÁRIA -->
     <div class="pcard reveal">
       <div class="ph">
-        <span class="psec si">Imobiliário</span>
-        <h3 class="ptitle">Otimização de Vendas Imobiliárias</h3>
+        <span class="psec si" data-i18n="p2.sector">Imobiliário</span>
+        <h3 class="ptitle" data-i18n="p2.title">Otimização de Vendas Imobiliárias</h3>
         <div class="pimp">+€1.4M</div>
-        <div class="pimp-l">ganho adicional com Simplex + Dijkstra (+32%)</div>
+        <div class="pimp-l" data-i18n="p2.implab">ganho adicional com Simplex + Dijkstra (+32%)</div>
       </div>
       <div class="pb">
-        <p class="pdesc">500 clientes analisados com taxa de conversão de 30%. Segmentação por perfil e otimização de rotas de corretores elevou o impacto de €4,4M para €5,8M.</p>
+        <p class="pdesc" data-i18n="p2.desc">500 clientes analisados com taxa de conversão de 30%. Segmentação por perfil e otimização de rotas de corretores elevou o impacto de €4,4M para €5,8M.</p>
         <div class="star">
-          <div class="sr"><div class="sk2">Situação</div><div class="sv">70% não compraram. Campanhas genéricas e rotas aleatórias geravam €4,4M em perdas anuais.</div></div>
-          <div class="sr"><div class="sk2">Tarefa</div><div class="sv">Identificar perfis de maior propensão e otimizar alocação de marketing e rotas dos corretores.</div></div>
-          <div class="sr"><div class="sk2">Ações</div><div class="sv">Simplex: alocação de budget por segmento (+23% conversões). Dijkstra: rotas de visita (-28% distância).</div></div>
-          <div class="sr"><div class="sk2">Resultado</div><div class="sv">€5,8M identificados. ROI 320%. Economia €224K/ano em deslocamentos.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.s">Situação</div><div class="sv" data-i18n="p2.s">70% não compraram. Campanhas genéricas e rotas aleatórias geravam €4,4M em perdas anuais.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.t">Tarefa</div><div class="sv" data-i18n="p2.t">Identificar perfis de maior propensão e otimizar alocação de marketing e rotas dos corretores.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.a">Ações</div><div class="sv" data-i18n="p2.a">Simplex: alocação de budget por segmento (+23% conversões). Dijkstra: rotas de visita (-28% distância).</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.r">Resultado</div><div class="sv" data-i18n="p2.r">€5,8M identificados. ROI 320%. Economia €224K/ano em deslocamentos.</div></div>
         </div>
-        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Dijkstra</span><span class="tt">Segmentação</span></div>
+        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Dijkstra</span><span class="tt" data-i18n="tag.seg">Segmentação</span></div>
         <div class="plinks">
           <a href="https://github.com/kresio-azevedo-fernando/projecto-imobiliaria" target="_blank" class="lb lgh">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Repositório
+            <span data-i18n="btn.repo">Repositório</span>
           </a>
-          <a href="https://github.com/kresio-azevedo-fernando/projecto-imobiliaria/blob/main/Real%20Estate%20Sales%20Optimization%20Report.pdf" target="_blank" class="lb lpdf">Relatório PDF</a>
-          <span class="lcs">Dashboard · em breve</span>
+          <a href="https://github.com/kresio-azevedo-fernando/projecto-imobiliaria/blob/main/Real%20Estate%20Sales%20Optimization%20Report.pdf" target="_blank" class="lb lpdf" data-i18n="btn.pdf">Relatório PDF</a>
+          <span class="lcs" data-i18n="btn.dash">Dashboard · em breve</span>
         </div>
       </div>
     </div>
 
+    <!-- CAFÉ -->
     <div class="pcard reveal">
       <div class="ph">
         <span class="psec sc">F&amp;B</span>
-        <h3 class="ptitle">Otimização de Vendas — Cafetaria</h3>
+        <h3 class="ptitle" data-i18n="p3.title">Otimização de Vendas — Cafetaria</h3>
         <div class="pimp">+€45.2K</div>
-        <div class="pimp-l">oportunidade anual identificada (+40% sobre faturamento)</div>
+        <div class="pimp-l" data-i18n="p3.implab">oportunidade anual identificada (+40% sobre faturamento)</div>
       </div>
       <div class="pb">
-        <p class="pdesc">1 ano de dados, faturamento €112.245. Análise de menu, sazonalidade e staffing revelou €45.200/ano com ações implementáveis em 7 dias.</p>
+        <p class="pdesc" data-i18n="p3.desc">1 ano de dados, faturamento €112.245. Análise de menu, sazonalidade e staffing revelou €45.200/ano com ações implementáveis em 7 dias.</p>
         <div class="star">
-          <div class="sr"><div class="sk2">Situação</div><div class="sv">50% do menu gerava 26% da receita. Variação de 163% entre melhor (€15K) e pior mês (€5.7K).</div></div>
-          <div class="sr"><div class="sk2">Tarefa</div><div class="sv">Identificar perdas e propor 3 ações concretas com impacto quantificado implementáveis em 30 dias.</div></div>
-          <div class="sr"><div class="sk2">Ações</div><div class="sv">Menu Top 4 + combos (+€1,20/ticket). Staffing por pico mensal. Promoções sazonais Mar/Set/Fev.</div></div>
-          <div class="sr"><div class="sk2">Resultado</div><div class="sv">€45.200/ano: €20K (menu) + €16.8K (staffing) + €8.4K (sazonalidade).</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.s">Situação</div><div class="sv" data-i18n="p3.s">50% do menu gerava 26% da receita. Variação de 163% entre melhor (€15K) e pior mês (€5.7K).</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.t">Tarefa</div><div class="sv" data-i18n="p3.t">Identificar perdas e propor 3 ações concretas com impacto quantificado implementáveis em 30 dias.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.a">Ações</div><div class="sv" data-i18n="p3.a">Menu Top 4 + combos (+€1,20/ticket). Staffing por pico mensal. Promoções sazonais Mar/Set/Fev.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.r">Resultado</div><div class="sv" data-i18n="p3.r">€45.200/ano: €20K (menu) + €16.8K (staffing) + €8.4K (sazonalidade).</div></div>
         </div>
-        <div class="ptags"><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Análise ABC</span><span class="tt">Sazonalidade</span><span class="tt">Stat. Descritiva</span></div>
+        <div class="ptags"><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt" data-i18n="tag.abc">Análise ABC</span><span class="tt" data-i18n="tag.saz">Sazonalidade</span><span class="tt">Stat. Descritiva</span></div>
         <div class="plinks">
           <a href="https://github.com/kresio-azevedo-fernando/projecto-cafe" target="_blank" class="lb lgh">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Repositório
+            <span data-i18n="btn.repo">Repositório</span>
           </a>
-          <a href="https://github.com/kresio-azevedo-fernando/projecto-cafe/blob/main/Coffee%20Report.pdf" target="_blank" class="lb lpdf">Relatório PDF</a>
-          <span class="lcs">Dashboard · em breve</span>
+          <a href="https://github.com/kresio-azevedo-fernando/projecto-cafe/blob/main/Coffee%20Report.pdf" target="_blank" class="lb lpdf" data-i18n="btn.pdf">Relatório PDF</a>
+          <span class="lcs" data-i18n="btn.dash">Dashboard · em breve</span>
         </div>
       </div>
     </div>
@@ -339,59 +362,58 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
 
 <!-- RECOMENDAÇÕES -->
 <section id="recomendacoes">
-  <div class="s-tag reveal">Recomendações</div>
-  <h2 class="s-title reveal">O que dizem<br>sobre o trabalho</h2>
-  <p class="s-sub reveal">Validação académica e de negócio — professores universitários e profissionais do sector.</p>
+  <div class="s-tag reveal" data-i18n="rec.tag">Recomendações</div>
+  <h2 class="s-title reveal" data-i18n="rec.title">O que dizem<br>sobre o trabalho</h2>
+  <p class="s-sub reveal" data-i18n="rec.sub">Validação académica e de negócio — professores universitários e profissionais do sector.</p>
   <div class="rec-grid">
-    <!-- ✏️ EDITAR: substitua os textos, nomes, iniciais e emails reais -->
     <div class="rc reveal">
       <div class="rqm">"</div>
-      <p class="rq">Demonstra uma capacidade notável de estruturar problemas de base de dados complexos e traduzir os resultados em linguagem de negócio acessível. Os seus projetos revelam maturidade analítica acima do esperado para este nível.</p>
+      <p class="rq" data-i18n="rec1.q">Demonstra uma capacidade notável de estruturar problemas de base de dados complexos e traduzir os resultados em linguagem de negócio acessível. Os seus projetos revelam maturidade analítica acima do esperado para este nível.</p>
       <div class="rdiv"></div>
       <div class="rp">
         <div class="rav">MP</div>
         <div>
-          <div class="rn">Prof. [Nome Completo]</div>
-          <div class="rr">Professor de Base de Dados · Universidade [Nome]</div>
+          <div class="rn" data-i18n="rec1.name">Prof. [Nome Completo]</div>
+          <div class="rr" data-i18n="rec1.role">Professor de Base de Dados · Universidade [Nome]</div>
           <a href="mailto:email@universidade.pt" class="re">email@universidade.pt</a>
         </div>
       </div>
     </div>
     <div class="rc reveal">
       <div class="rqm">"</div>
-      <p class="rq">A aplicação dos algoritmos de otimização a casos reais de negócio — nomeadamente Simplex e Dijkstra — foi feita com rigor e com uma clareza na comunicação dos resultados que raramente vejo em estudantes desta fase.</p>
+      <p class="rq" data-i18n="rec2.q">A aplicação dos algoritmos de otimização a casos reais de negócio — nomeadamente Simplex e Dijkstra — foi feita com rigor e com uma clareza na comunicação dos resultados que raramente vejo em estudantes desta fase.</p>
       <div class="rdiv"></div>
       <div class="rp">
         <div class="rav">JS</div>
         <div>
-          <div class="rn">Prof. [Nome Completo]</div>
-          <div class="rr">Professor de Investigação Operacional · Universidade [Nome]</div>
+          <div class="rn" data-i18n="rec2.name">Prof. [Nome Completo]</div>
+          <div class="rr" data-i18n="rec2.role">Professor de Investigação Operacional · Universidade [Nome]</div>
           <a href="mailto:email@universidade.pt" class="re">email@universidade.pt</a>
         </div>
       </div>
     </div>
     <div class="rc reveal">
       <div class="rqm">"</div>
-      <p class="rq">Como empresária que trabalha diariamente com Power BI, posso afirmar que os dashboards produzidos não se limitam a ser visualmente competentes — respondem às perguntas certas e conduzem a decisões concretas.</p>
+      <p class="rq" data-i18n="rec3.q">Como empresária que trabalha diariamente com Power BI, posso afirmar que os dashboards produzidos não se limitam a ser visualmente competentes — respondem às perguntas certas e conduzem a decisões concretas.</p>
       <div class="rdiv"></div>
       <div class="rp">
         <div class="rav">AF</div>
         <div>
-          <div class="rn">Prof.ª [Nome Completo]</div>
-          <div class="rr">Professora & Empresária · Power BI</div>
+          <div class="rn" data-i18n="rec3.name">Prof.ª [Nome Completo]</div>
+          <div class="rr" data-i18n="rec3.role">Professora & Empresária · Power BI</div>
           <a href="mailto:email@empresa.pt" class="re">email@empresa.pt</a>
         </div>
       </div>
     </div>
     <div class="rc reveal">
       <div class="rqm">"</div>
-      <p class="rq">Quando me apresentou a análise da farmácia percebi imediatamente o valor prático. Identificou padrões de sazonalidade de procura que eu nunca tinha conseguido ver nos meus relatórios habituais. Recomendo sem reservas.</p>
+      <p class="rq" data-i18n="rec4.q">Quando me apresentou a análise da farmácia percebi imediatamente o valor prático. Identificou padrões de sazonalidade de procura que eu nunca tinha conseguido ver nos meus relatórios habituais. Recomendo sem reservas.</p>
       <div class="rdiv"></div>
       <div class="rp">
         <div class="rav">CS</div>
         <div>
-          <div class="rn">[Nome Completo]</div>
-          <div class="rr">Proprietária · Farmácia [Nome]</div>
+          <div class="rn" data-i18n="rec4.name">[Nome Completo]</div>
+          <div class="rr" data-i18n="rec4.role">Proprietária · Farmácia [Nome]</div>
           <a href="mailto:email@farmacia.pt" class="re">email@farmacia.pt</a>
         </div>
       </div>
@@ -401,36 +423,35 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
 
 <!-- EXPERIÊNCIA -->
 <section id="experiencia">
-  <div class="s-tag reveal">Experiência</div>
-  <h2 class="s-title reveal">Percurso<br>profissional</h2>
-  <p class="s-sub reveal">Formação e experiência aplicada em análise de dados e investigação operacional.</p>
+  <div class="s-tag reveal" data-i18n="exp.tag">Experiência</div>
+  <h2 class="s-title reveal" data-i18n="exp.title">Percurso<br>profissional</h2>
+  <p class="s-sub reveal" data-i18n="exp.sub">Formação e experiência aplicada em análise de dados e investigação operacional.</p>
   <div class="exptl">
     <div class="ei reveal">
-      <div class="ep">2024 — Presente</div>
+      <div class="ep">2024 — <span data-i18n="exp.present">Presente</span></div>
       <div class="edot"></div>
       <div class="ebody">
-        <div class="erole">Data & BI Business Analyst</div>
-        <div class="eco">Portfolio independente · Freelance</div>
-        <div class="edesc">Desenvolvimento de projetos de análise aplicados a logística, imobiliário e restauração. Aplicação de Simplex e Dijkstra para quantificar oportunidades com impacto financeiro mensurável. Relatórios executivos e dashboards Power BI entregues a profissionais e empresas.</div>
-      </div>
-    </div>
-    <!-- ✏️ EDITAR: adicione as suas experiências e formação reais abaixo -->
-    <div class="ei reveal">
-      <div class="ep"><!-- ano --></div>
-      <div class="edot"></div>
-      <div class="ebody">
-        <div class="erole"><!-- Cargo ou Formação --></div>
-        <div class="eco"><!-- Empresa ou Instituição --></div>
-        <div class="edesc"><!-- Descrição breve --></div>
+        <div class="erole" data-i18n="exp1.role">Data & BI Business Analyst</div>
+        <div class="eco" data-i18n="exp1.co">Portfolio independente · Freelance</div>
+        <div class="edesc" data-i18n="exp1.desc">Desenvolvimento de projetos de análise aplicados a logística, imobiliário e restauração. Aplicação de Simplex e Dijkstra para quantificar oportunidades com impacto financeiro mensurável. Relatórios executivos e dashboards Power BI entregues a profissionais e empresas.</div>
       </div>
     </div>
     <div class="ei reveal">
-      <div class="ep"><!-- ano --></div>
+      <div class="ep"></div>
       <div class="edot"></div>
       <div class="ebody">
-        <div class="erole"><!-- Cargo ou Formação --></div>
-        <div class="eco"><!-- Empresa ou Instituição --></div>
-        <div class="edesc"><!-- Descrição breve --></div>
+        <div class="erole"></div>
+        <div class="eco"></div>
+        <div class="edesc"></div>
+      </div>
+    </div>
+    <div class="ei reveal">
+      <div class="ep"></div>
+      <div class="edot"></div>
+      <div class="ebody">
+        <div class="erole"></div>
+        <div class="eco"></div>
+        <div class="edesc"></div>
       </div>
     </div>
   </div>
@@ -439,9 +460,9 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
 <!-- CONTATO -->
 <section id="contato">
   <div class="cinner">
-    <div class="s-tag reveal" style="justify-content:center">Contato</div>
-    <h2 class="s-title reveal">Vamos trabalhar<br>juntos</h2>
-    <p class="s-sub reveal" style="margin:0 auto 0">Disponível para projetos freelance, consultoria e posições full-time em Portugal, Canadá e Luxemburgo.</p>
+    <div class="s-tag reveal" style="justify-content:center" data-i18n="contact.tag">Contato</div>
+    <h2 class="s-title reveal" data-i18n="contact.title">Vamos trabalhar<br>juntos</h2>
+    <p class="s-sub reveal" style="margin:0 auto 0" data-i18n="contact.sub">Disponível para projetos freelance, consultoria e posições full-time.</p>
     <div class="cemail reveal"><a href="mailto:kresiofernando@hotmail.com">kresiofernando@hotmail.com</a></div>
     <div class="clinks reveal">
       <a href="https://www.linkedin.com/in/kresio-data-bi-business-analyst/" target="_blank" class="btn-p">LinkedIn</a>
@@ -457,8 +478,158 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
 </footer>
 
 <script>
+// ── TRANSLATIONS ──────────────────────────────────────────
+const i18n = {
+  pt: {
+    "nav.sobre":"Sobre","nav.projetos":"Projetos","nav.rec":"Recomendações",
+    "nav.exp":"Experiência","nav.contato":"Contato","nav.cta":"Contactar",
+    "hero.tag":"Analista de Dados · BI · Negócios",
+    "hero.role":"Data & BI Business Analyst",
+    "hero.desc":"Transformo dados em decisões que geram impacto mensurável. Do diagnóstico à ação — análise descritiva, diagnóstica e prescritiva reforçada por modelos de otimização matemática.",
+    "hero.btn1":"Ver Projetos",
+    "hero.n1":"Impacto · Logística","hero.n2":"Impacto · Imobiliário","hero.n3":"Impacto · Café",
+    "sobre.tag":"Sobre Mim","sobre.title":"Dados que<br>movem decisões",
+    "sobre.p1":"Sou <strong>Kresio Azevedo Fernando</strong>, Analista de Dados, BI e Negócios focado em transformar dados brutos em decisões estratégicas com impacto financeiro mensurável.",
+    "sobre.p2":"A minha abordagem cobre os três níveis: <strong>descritiva</strong> (o que aconteceu), <strong>diagnóstica</strong> (porque aconteceu) e <strong>prescritiva</strong> (o que fazer) — com a diferença de aplicar modelos de <strong>Investigação Operacional</strong> (Simplex e Dijkstra) para maximizar o impacto das recomendações.",
+    "sobre.p3":"Comunicação plena e proficiência técnica em <strong>português, inglês e francês</strong>, assegurando fluidez estratégica em operações globais e na análise de dados multiculturais.",
+    "sobre.sklabel":"Competências técnicas",
+    "sk.desc":"Análise Descritiva","sk.diag":"Análise Diagnóstica","sk.presc":"Análise Prescritiva",
+    "sk.stat":"Estatística Descritiva","sk.pl":"Programação Linear","sk.grafos":"Teoria dos Grafos",
+    "sk.clean":"Limpeza de Dados","sk.pivot":"Tabelas Dinâmicas",
+    "stats.proj":"Projetos no portfolio","stats.opp":"Oportunidades identificadas",
+    "stats.roi":"ROI médio dos modelos","stats.rec":"Recomendações recebidas",
+    "lang.title":"Idiomas","lang.pt":"Nativo","lang.en":"Profissional","lang.fr":"Profissional",
+    "proj.tag":"Portfolio","proj.title":"Projetos com<br>impacto real",
+    "proj.sub":"Cada projeto entrega análise descritiva, diagnóstica e prescritiva com ações concretas e impacto financeiro quantificado.",
+    "p1.sector":"Logística","p1.title":"Otimização Logística com Investigação Operacional",
+    "p1.implab":"ganho adicional com Simplex + Dijkstra (+30%)",
+    "p1.desc":"Armazém com 3.204 produtos, taxa de atendimento de 80% e 14.746 ruturas/mês. A aplicação de modelos matemáticos elevou o impacto de €1,05B para €1,37B.",
+    "p1.s":"Custo logístico €17,7B/ano. Atendimento 80%, ruturas a gerar €630M/ano em perdas de receita.",
+    "p1.t":"Identificar causas das ruturas e otimizar stocks, layout e rotas com modelos matemáticos.",
+    "p1.a":"Simplex: níveis ótimos de stock (-23% excedente). Dijkstra: rotas de picking (-32% distância). Transporte: 177 → 51 rotas.",
+    "p1.r":"€1,37B identificados. ROI 420%. Lead time: 6,0 → 4,3 dias.",
+    "p2.sector":"Imobiliário","p2.title":"Otimização de Vendas Imobiliárias",
+    "p2.implab":"ganho adicional com Simplex + Dijkstra (+32%)",
+    "p2.desc":"500 clientes analisados com taxa de conversão de 30%. Segmentação por perfil e otimização de rotas de corretores elevou o impacto de €4,4M para €5,8M.",
+    "p2.s":"70% não compraram. Campanhas genéricas e rotas aleatórias geravam €4,4M em perdas anuais.",
+    "p2.t":"Identificar perfis de maior propensão e otimizar alocação de marketing e rotas dos corretores.",
+    "p2.a":"Simplex: alocação de budget por segmento (+23% conversões). Dijkstra: rotas de visita (-28% distância).",
+    "p2.r":"€5,8M identificados. ROI 320%. Economia €224K/ano em deslocamentos.",
+    "p3.title":"Otimização de Vendas — Cafetaria",
+    "p3.implab":"oportunidade anual identificada (+40% sobre faturamento)",
+    "p3.desc":"1 ano de dados, faturamento €112.245. Análise de menu, sazonalidade e staffing revelou €45.200/ano com ações implementáveis em 7 dias.",
+    "p3.s":"50% do menu gerava 26% da receita. Variação de 163% entre melhor (€15K) e pior mês (€5.7K).",
+    "p3.t":"Identificar perdas e propor 3 ações concretas com impacto quantificado implementáveis em 30 dias.",
+    "p3.a":"Menu Top 4 + combos (+€1,20/ticket). Staffing por pico mensal. Promoções sazonais Mar/Set/Fev.",
+    "p3.r":"€45.200/ano: €20K (menu) + €16.8K (staffing) + €8.4K (sazonalidade).",
+    "star.s":"Situação","star.t":"Tarefa","star.a":"Ações","star.r":"Resultado",
+    "btn.repo":"Repositório","btn.pdf":"Relatório PDF","btn.dash":"Dashboard · em breve",
+    "tag.pl":"Prog. Linear","tag.seg":"Segmentação","tag.abc":"Análise ABC","tag.saz":"Sazonalidade",
+    "rec.tag":"Recomendações","rec.title":"O que dizem<br>sobre o trabalho",
+    "rec.sub":"Validação académica e de negócio — professores universitários e profissionais do sector.",
+    "rec1.q":"Demonstra uma capacidade notável de estruturar problemas de base de dados complexos e traduzir os resultados em linguagem de negócio acessível. Os seus projetos revelam maturidade analítica acima do esperado para este nível.",
+    "rec1.name":"Prof. [Nome Completo]","rec1.role":"Professor de Base de Dados · Universidade [Nome]",
+    "rec2.q":"A aplicação dos algoritmos de otimização a casos reais de negócio — nomeadamente Simplex e Dijkstra — foi feita com rigor e com uma clareza na comunicação dos resultados que raramente vejo em estudantes desta fase.",
+    "rec2.name":"Prof. [Nome Completo]","rec2.role":"Professor de Investigação Operacional · Universidade [Nome]",
+    "rec3.q":"Como empresária que trabalha diariamente com Power BI, posso afirmar que os dashboards produzidos não se limitam a ser visualmente competentes — respondem às perguntas certas e conduzem a decisões concretas.",
+    "rec3.name":"Prof.ª [Nome Completo]","rec3.role":"Professora & Empresária · Power BI",
+    "rec4.q":"Quando me apresentou a análise da farmácia percebi imediatamente o valor prático. Identificou padrões de sazonalidade de procura que eu nunca tinha conseguido ver nos meus relatórios habituais. Recomendo sem reservas.",
+    "rec4.name":"[Nome Completo]","rec4.role":"Proprietária · Farmácia [Nome]",
+    "exp.tag":"Experiência","exp.title":"Percurso<br>profissional",
+    "exp.sub":"Formação e experiência aplicada em análise de dados e investigação operacional.",
+    "exp.present":"Presente",
+    "exp1.role":"Data & BI Business Analyst","exp1.co":"Portfolio independente · Freelance",
+    "exp1.desc":"Desenvolvimento de projetos de análise aplicados a logística, imobiliário e restauração. Aplicação de Simplex e Dijkstra para quantificar oportunidades com impacto financeiro mensurável. Relatórios executivos e dashboards Power BI entregues a profissionais e empresas.",
+    "contact.tag":"Contato","contact.title":"Vamos trabalhar<br>juntos",
+    "contact.sub":"Disponível para projetos freelance, consultoria e posições full-time."
+  },
+  en: {
+    "nav.sobre":"About","nav.projetos":"Projects","nav.rec":"Testimonials",
+    "nav.exp":"Experience","nav.contato":"Contact","nav.cta":"Get in Touch",
+    "hero.tag":"Data Analyst · BI · Business",
+    "hero.role":"Data & BI Business Analyst",
+    "hero.desc":"I turn data into decisions that generate measurable impact. From diagnosis to action — descriptive, diagnostic and prescriptive analytics reinforced by mathematical optimisation models.",
+    "hero.btn1":"View Projects",
+    "hero.n1":"Impact · Logistics","hero.n2":"Impact · Real Estate","hero.n3":"Impact · Coffee",
+    "sobre.tag":"About Me","sobre.title":"Data that<br>drives decisions",
+    "sobre.p1":"I am <strong>Kresio Azevedo Fernando</strong>, a Data, BI & Business Analyst focused on turning raw data into strategic decisions with measurable financial impact.",
+    "sobre.p2":"My approach covers three levels: <strong>descriptive</strong> (what happened), <strong>diagnostic</strong> (why it happened) and <strong>prescriptive</strong> (what to do) — with the differentiator of applying <strong>Operations Research</strong> models (Simplex and Dijkstra) to maximise the impact of recommendations.",
+    "sobre.p3":"Full communication and technical proficiency in <strong>Portuguese, English and French</strong>, ensuring strategic fluency in global operations and multicultural data analysis.",
+    "sobre.sklabel":"Technical skills",
+    "sk.desc":"Descriptive Analytics","sk.diag":"Diagnostic Analytics","sk.presc":"Prescriptive Analytics",
+    "sk.stat":"Descriptive Statistics","sk.pl":"Linear Programming","sk.grafos":"Graph Theory",
+    "sk.clean":"Data Cleaning","sk.pivot":"Pivot Tables",
+    "stats.proj":"Portfolio projects","stats.opp":"Opportunities identified",
+    "stats.roi":"Average model ROI","stats.rec":"Testimonials received",
+    "lang.title":"Languages","lang.pt":"Native","lang.en":"Professional","lang.fr":"Professional",
+    "proj.tag":"Portfolio","proj.title":"Projects with<br>real impact",
+    "proj.sub":"Each project delivers descriptive, diagnostic and prescriptive analysis with concrete actions and quantified financial impact.",
+    "p1.sector":"Logistics","p1.title":"Logistics Optimisation with Operations Research",
+    "p1.implab":"additional gain with Simplex + Dijkstra (+30%)",
+    "p1.desc":"Warehouse with 3,204 products, 80% service level and 14,746 stockouts/month. Applying mathematical models increased the impact from €1.05B to €1.37B.",
+    "p1.s":"Logistics cost €17.7B/year. 80% service level — stockouts generating €630M/year in revenue losses.",
+    "p1.t":"Identify root causes of stockouts and optimise inventory, layout and routes using mathematical models.",
+    "p1.a":"Simplex: optimal stock levels (-23% surplus). Dijkstra: picking routes (-32% distance). Transport: 177 → 51 routes.",
+    "p1.r":"€1.37B identified. ROI 420%. Lead time: 6.0 → 4.3 days.",
+    "p2.sector":"Real Estate","p2.title":"Real Estate Sales Optimisation",
+    "p2.implab":"additional gain with Simplex + Dijkstra (+32%)",
+    "p2.desc":"500 clients analysed with a 30% conversion rate. Profile segmentation and agent route optimisation increased impact from €4.4M to €5.8M.",
+    "p2.s":"70% did not buy. Generic campaigns and random routes generated €4.4M in annual losses.",
+    "p2.t":"Identify highest-propensity profiles and optimise marketing budget allocation and agent routes.",
+    "p2.a":"Simplex: budget allocation by segment (+23% conversions). Dijkstra: visit routes (-28% distance).",
+    "p2.r":"€5.8M identified. ROI 320%. €224K/year saved in agent travel costs.",
+    "p3.title":"Sales Optimisation — Coffee Shop",
+    "p3.implab":"annual opportunity identified (+40% over current revenue)",
+    "p3.desc":"1 year of data, €112,245 in revenue. Menu, seasonality and staffing analysis revealed €45,200/year in opportunities actionable within 7 days.",
+    "p3.s":"50% of the menu generated only 26% of revenue. 163% swing between best (€15K) and worst month (€5.7K).",
+    "p3.t":"Identify revenue losses and propose 3 concrete actions with quantified impact, implementable within 30 days.",
+    "p3.a":"Top 4 menu + premium combos (+€1.20/ticket). Smart staffing by monthly peak. Seasonal promotions Mar/Sep/Feb.",
+    "p3.r":"€45,200/year: €20K (menu) + €16.8K (staffing) + €8.4K (seasonality).",
+    "star.s":"Situation","star.t":"Task","star.a":"Actions","star.r":"Result",
+    "btn.repo":"Repository","btn.pdf":"PDF Report","btn.dash":"Dashboard · coming soon",
+    "tag.pl":"Linear Prog.","tag.seg":"Segmentation","tag.abc":"ABC Analysis","tag.saz":"Seasonality",
+    "rec.tag":"Testimonials","rec.title":"What they say<br>about the work",
+    "rec.sub":"Academic and business validation — university professors and industry professionals.",
+    "rec1.q":"Demonstrates a remarkable ability to structure complex database problems and translate results into accessible business language. The projects reveal analytical maturity above what is expected at this level.",
+    "rec1.name":"Prof. [Full Name]","rec1.role":"Database Professor · [University Name]",
+    "rec2.q":"The application of optimisation algorithms to real business cases — namely Simplex and Dijkstra — was done with rigour and a clarity in communicating results that I rarely see in students at this stage.",
+    "rec2.name":"Prof. [Full Name]","rec2.role":"Operations Research Professor · [University Name]",
+    "rec3.q":"As a business owner who works with Power BI daily, I can confirm that the dashboards produced are not just visually competent — they answer the right questions and lead to concrete decisions.",
+    "rec3.name":"Prof. [Full Name]","rec3.role":"Professor & Business Owner · Power BI",
+    "rec4.q":"When the pharmacy analysis was presented to me, I immediately understood the practical value. It identified demand seasonality patterns I had never been able to see in my regular reports. I recommend without reservation.",
+    "rec4.name":"[Full Name]","rec4.role":"Owner · [Pharmacy Name]",
+    "exp.tag":"Experience","exp.title":"Professional<br>background",
+    "exp.sub":"Training and applied experience in data analysis and operations research.",
+    "exp.present":"Present",
+    "exp1.role":"Data & BI Business Analyst","exp1.co":"Independent portfolio · Freelance",
+    "exp1.desc":"Development of analytics projects applied to logistics, real estate and hospitality. Application of Simplex and Dijkstra to quantify opportunities with measurable financial impact. Executive reports and Power BI dashboards delivered to professionals and companies.",
+    "contact.tag":"Contact","contact.title":"Let's work<br>together",
+    "contact.sub":"Available for freelance projects, consulting contracts and full-time positions."
+  }
+};
+
+// ── ENGINE ────────────────────────────────────────────────
+function setLang(lang) {
+  const dict = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+  localStorage.setItem('kresio-lang', lang);
+}
+
+// ── INIT ──────────────────────────────────────────────────
+const savedLang = localStorage.getItem('kresio-lang') || 'pt';
+setLang(savedLang);
+
+// ── NAV SCROLL ────────────────────────────────────────────
 const nb = document.getElementById('nb');
 window.addEventListener('scroll', () => nb.classList.toggle('scrolled', scrollY > 40));
+
+// ── REVEAL ON SCROLL ──────────────────────────────────────
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
