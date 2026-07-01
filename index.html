@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kresio Fernando — Data & BI Analyst</title>
+<title>Kresio Fernando — BI & Decision Optimisation Specialist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#09090f;--bg2:#0f0f1a;--bg3:#141420;--bg4:#1a1a28;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#e8e8f0;--text2:#9494a8;--text3:#5a5a72;--accent:#bb9476;--accent2:#bd865c;--accent-dim:rgba(194,120,10,0.12);--accent-glow:rgba(156,102,32,0.32);--gold:#c8a96e;--blue:#6eb5ff}
+:root{--bg:#09090f;--bg2:#0f0f1a;--bg3:#141420;--bg4:#1a1a28;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#e8e8f0;--text2:#9494a8;--text3:#5a5a72;--accent:#bb9476;--accent2:#bd865c;--accent-dim:rgba(194,120,10,0.12);--accent-glow:rgba(156,102,32,0.32);--gold:#c8a96e;--blue:#6eb5ff;--green:#1d9e75}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
@@ -75,16 +75,25 @@ section{padding:6.5rem 5%}
 .mb-k{font-weight:300;color:var(--text2)}
 .mb-v{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent)}
 #projetos{background:var(--bg)}
+.live-note{background:var(--bg2);border:1px solid rgba(29,158,117,0.25);border-radius:4px;padding:.75rem 1.1rem;margin-bottom:2.5rem;font-family:'DM Mono',monospace;font-size:11px;color:var(--green);display:flex;align-items:center;gap:.6rem}
+.live-note::before{content:'●';font-size:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.4rem}
+.proj-grid-real{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:1.4rem;margin-bottom:1.4rem}
 .pcard{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .3s;position:relative}
+.pcard.real{border-color:rgba(29,158,117,0.2)}
 .pcard::before{content:'';position:absolute;inset:0;border-radius:6px;opacity:0;background:linear-gradient(135deg,var(--accent-glow),transparent);transition:opacity .3s;pointer-events:none}
+.pcard.real::before{background:linear-gradient(135deg,rgba(29,158,117,0.08),transparent)}
 .pcard:hover{border-color:rgba(212,120,0,0.22);transform:translateY(-4px)}
+.pcard.real:hover{border-color:rgba(29,158,117,0.35)}
 .pcard:hover::before{opacity:1}
 .ph{padding:1.4rem 1.4rem 0}
 .psec{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:.875rem}
 .sl{background:rgba(110,181,255,0.09);color:var(--blue);border:1px solid rgba(110,181,255,0.18)}
 .si{background:rgba(200,169,110,0.09);color:var(--gold);border:1px solid rgba(200,169,110,0.18)}
 .sc{background:rgba(212,127,0,0.09);color:var(--accent);border:1px solid rgba(212,120,0,0.18)}
+.sr-real{background:rgba(29,158,117,0.09);color:var(--green);border:1px solid rgba(29,158,117,0.25)}
+.real-badge{font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;border-radius:2px;background:rgba(29,158,117,0.12);color:var(--green);border:1px solid rgba(29,158,117,0.2);margin-left:.5rem;letter-spacing:.05em}
 .ptitle{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:.5rem;line-height:1.3}
 .pimp{font-family:'Outfit',sans-serif;font-size:1.55rem;font-weight:600;color:var(--accent);margin:.65rem 0 .3rem}
 .pimp-l{font-size:11px;color:var(--text3);margin-bottom:.875rem}
@@ -103,7 +112,10 @@ section{padding:6.5rem 5%}
 .lgh:hover{border-color:var(--accent);color:var(--accent)}
 .lpdf{border:1px solid rgba(212,127,0,0.28);color:var(--accent);background:var(--accent-dim)}
 .lpdf:hover{background:var(--accent);color:#000}
-.lcs{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);border:1px dashed var(--border);padding:7px 10px;border-radius:2px}
+.ldash{border:1px solid rgba(29,158,117,0.3);color:var(--green);background:rgba(29,158,117,0.06)}
+.ldash:hover{background:var(--green);color:#000}
+.lconf{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);border:1px dashed var(--border);padding:7px 10px;border-radius:2px}
+.conf-note{font-size:11px;color:var(--text3);font-style:italic;margin-top:.75rem;padding:.6rem .75rem;background:var(--bg3);border-radius:3px;border-left:2px solid var(--text3)}
 #recomendacoes{background:var(--bg2)}
 .rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.4rem}
 .rc{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:1.6rem;transition:all .3s}
@@ -115,6 +127,7 @@ section{padding:6.5rem 5%}
 .rav{width:38px;height:38px;border-radius:50%;background:var(--accent-dim);border:1px solid rgba(212,138,0,0.25);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--accent);flex-shrink:0}
 .rn{font-size:13px;font-weight:500;color:var(--text)}
 .rr{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.03em;margin-top:2px}
+.ref-note{font-size:11px;color:var(--text3);margin-top:4px;font-style:italic}
 #experiencia{background:var(--bg)}
 .exptl{display:flex;flex-direction:column;max-width:760px}
 .ei{display:grid;grid-template-columns:165px 1fr;gap:1.75rem;padding:1.875rem 0;border-bottom:1px solid var(--border);position:relative}
@@ -147,7 +160,7 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
   .ep{text-align:left;padding-bottom:.2rem}.ebody{padding-left:0}
   footer{flex-direction:column;gap:.4rem;text-align:center}
 }
-@media(max-width:580px){.proj-grid,.rec-grid{grid-template-columns:1fr}.hero-btns{flex-direction:column}}
+@media(max-width:580px){.proj-grid,.rec-grid,.proj-grid-real{grid-template-columns:1fr}.hero-btns{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -172,12 +185,13 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-tag" data-i18n="hero.tag">Analista de Dados · BI · Negócios</div>
+    <div class="hero-tag" data-i18n="hero.tag">BI · Decisão · Optimização Operacional</div>
     <h1 class="hero-name">Kresio<br><span>Fernando</span></h1>
-    <p class="hero-role" data-i18n="hero.role">Data & BI Business Analyst</p>
-    <p class="hero-desc" data-i18n="hero.desc">Transformo dados em decisões que geram impacto mensurável. Do diagnóstico à ação — análise descritiva, diagnóstica e prescritiva reforçada por modelos de otimização matemática.</p>
+    <p class="hero-role" data-i18n="hero.role">BI & Decision Optimisation Specialist</p>
+    <p class="hero-desc" data-i18n="hero.desc">Identifico onde a empresa perde dinheiro, elimino desperdícios operacionais e optimizo o fluxo para aumentar lucro sem comprometer a operação.</p>
     <div class="hero-btns">
       <a href="#projetos" class="btn-p" data-i18n="hero.btn1">Ver Projetos</a>
       <a href="https://www.linkedin.com/in/kresio-bi-business-data-analyst/" target="_blank" class="btn-g">
@@ -197,18 +211,20 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
   </div>
 </section>
 
+<!-- SOBRE -->
 <section id="sobre">
   <div class="sobre-grid">
     <div>
       <div class="s-tag reveal" data-i18n="sobre.tag">Sobre Mim</div>
       <h2 class="s-title reveal" data-i18n="sobre.title">Dados que<br>movem decisões</h2>
       <div class="sobre-text reveal">
-        <p data-i18n="sobre.p1">Sou <strong>Kresio Azevedo Fernando</strong>, Analista de Dados, BI e Negócios focado em transformar dados brutos em decisões estratégicas com impacto financeiro mensurável.</p>
-        <p data-i18n="sobre.p2">A minha abordagem cobre os três níveis: <strong>descritiva</strong> (o que aconteceu), <strong>diagnóstica</strong> (porque aconteceu) e <strong>prescritiva</strong> (o que fazer) — com a diferença de aplicar modelos de <strong>Investigação Operacional</strong> (Simplex e Dijkstra) para maximizar o impacto das recomendações.</p>
-        <p data-i18n="sobre.p3">Comunicação plena e proficiência técnica em <strong>português, inglês e francês</strong>, assegurando fluidez estratégica em operações globais e na análise de dados multiculturais.</p>
+        <p data-i18n="sobre.p1">Sou <strong>Kresio Azevedo Fernando</strong>, BI & Decision Optimisation Specialist. Não entrego dashboards — entrego sistemas de inteligência de negócio que identificam onde a empresa perde dinheiro e prescrevem as decisões que param essa perda.</p>
+        <p data-i18n="sobre.p2">A minha metodologia cobre quatro níveis: <strong>descritiva</strong> (o que aconteceu), <strong>diagnóstica</strong> (porque aconteceu), <strong>prescritiva</strong> (o que fazer) e <strong>optimização matemática</strong> (Simplex e Dijkstra) para maximizar o impacto das decisões.</p>
+        <p data-i18n="sobre.p3">Comunicação plena em <strong>português e inglês</strong>, com entregáveis em ambos os idiomas — relatório executivo, dashboard interactivo e apresentação McKinsey SCR.</p>
         <div class="sk-label" data-i18n="sobre.sklabel">Competências técnicas</div>
         <div class="sk-wrap">
           <span class="sk hi">SQL</span><span class="sk hi">Power BI</span><span class="sk hi">Excel</span>
+          <span class="sk hi">Python</span><span class="sk hi">Pandas</span><span class="sk hi">Matplotlib</span>
           <span class="sk hi">Simplex</span><span class="sk hi">Dijkstra</span>
           <span class="sk" data-i18n="sk.desc">Análise Descritiva</span>
           <span class="sk" data-i18n="sk.diag">Análise Diagnóstica</span>
@@ -217,14 +233,14 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
           <span class="sk" data-i18n="sk.pl">Programação Linear</span>
           <span class="sk" data-i18n="sk.grafos">Teoria dos Grafos</span>
           <span class="sk">DAX</span>
-          <span class="sk" data-i18n="sk.clean">Limpeza de Dados</span>
-          <span class="sk" data-i18n="sk.pivot">Tabelas Dinâmicas</span>
+          <span class="sk" data-i18n="sk.etl">Pipeline ETL</span>
           <span class="sk">Executive Reporting</span>
         </div>
       </div>
     </div>
     <div class="stat-col reveal">
-      <div class="stat-it"><span class="sit-l" data-i18n="stats.proj">Projetos no portfolio</span><span class="sit-v">3+</span></div>
+      <div class="stat-it"><span class="sit-l" data-i18n="stats.proj">Projetos no portfolio</span><span class="sit-v">5+</span></div>
+      <div class="stat-it"><span class="sit-l" data-i18n="stats.real">Projetos reais entregues</span><span class="sit-v">2</span></div>
       <div class="stat-it"><span class="sit-l" data-i18n="stats.opp">Oportunidades identificadas</span><span class="sit-v">€1.4B+</span></div>
       <div class="stat-it"><span class="sit-l" data-i18n="stats.roi">ROI médio dos modelos</span><span class="sit-v">370%</span></div>
       <div class="stat-it"><span class="sit-l" data-i18n="stats.rec">Recomendações recebidas</span><span class="sit-v">4</span></div>
@@ -232,17 +248,72 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
         <div class="mb-title" data-i18n="lang.title">Idiomas</div>
         <div class="mb-row"><span class="mb-k">Português</span><span class="mb-v" data-i18n="lang.pt">Nativo</span></div>
         <div class="mb-row"><span class="mb-k">English</span><span class="mb-v" data-i18n="lang.en">Profissional</span></div>
-        <div class="mb-row"><span class="mb-k">Français</span><span class="mb-v" data-i18n="lang.fr">Profissional</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PROJETOS -->
 <section id="projetos">
   <div class="s-tag reveal" data-i18n="proj.tag">Portfolio</div>
   <h2 class="s-title reveal" data-i18n="proj.title">Projetos com<br>impacto real</h2>
-  <p class="s-sub reveal" data-i18n="proj.sub">Cada projeto entrega análise descritiva, diagnóstica e prescritiva com ações concretas e impacto financeiro quantificado.</p>
+  <p class="s-sub reveal" data-i18n="proj.sub">Sistemas verificáveis ao vivo — não screenshots. Cada projecto inclui dashboard interactivo, análise SQL e modelos de optimização executáveis.</p>
+
+  <!-- PROJECTOS REAIS EM DESTAQUE -->
+  <div class="proj-grid-real reveal">
+
+    <!-- FARMÁCIA -->
+    <div class="pcard real">
+      <div class="ph">
+        <span class="psec sr-real" data-i18n="pr1.sector">Retalho Farmacêutico</span>
+        <span class="real-badge" data-i18n="real.badge">Projecto Real</span>
+        <h3 class="ptitle" data-i18n="pr1.title">Farmácia · Optimização de Margem & Fluxo</h3>
+        <div class="pimp">Kz 14.8M</div>
+        <div class="pimp-l" data-i18n="pr1.implab">/ano identificados · equiv. €16.500 · Cliente real · Luanda, Angola</div>
+      </div>
+      <div class="pb">
+        <p class="pdesc" data-i18n="pr1.desc">Quebras de caixa ocultas representavam 18% das saídas de inventário sem registo. Capital imobilizado em produtos de baixa rotação gerava 120% de variação no lucro entre o melhor e o pior mês.</p>
+        <div class="star">
+          <div class="sr"><div class="sk2" data-i18n="star.s">Situação</div><div class="sv" data-i18n="pr1.s">Levantamentos informais de stock para familiares/amigos sem registo financeiro + capital imobilizado em produtos de baixa rotação.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.t">Tarefa</div><div class="sv" data-i18n="pr1.t">Identificar fugas de stock ocultas, auditar a margem real por lote e aplicar Simplex para maximizar o lucro sob restrições de capital.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.a">Ações</div><div class="sv" data-i18n="pr1.a">Bloqueio de inventário com auditoria biométrica no POS. Modelo Simplex para reajuste do mix de compras (foco em genéricos de alta margem). Indexação de preços ao custo de reposição cambial.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.r">Resultado</div><div class="sv" data-i18n="pr1.r">Kz 8.2M (recuperação de stock) + Kz 4.1M (optimização Simplex) + Kz 2.5M (ajuste cambial) = Kz 14.8M/ano.</div></div>
+        </div>
+        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Python</span><span class="tt">Pandas</span></div>
+        <div class="conf-note" data-i18n="pr1.conf">Dados anonimizados por acordo de confidencialidade. Depoimento disponível mediante solicitação.</div>
+      </div>
+    </div>
+
+    <!-- RELOJOARIA -->
+    <div class="pcard real">
+      <div class="ph">
+        <span class="psec sr-real" data-i18n="pr2.sector">Retalho de Luxo & Acessórios</span>
+        <span class="real-badge" data-i18n="real.badge">Projecto Real</span>
+        <h3 class="ptitle" data-i18n="pr2.title">Relojoaria · BI & Monitorização em Tempo Real</h3>
+        <div class="pimp">Kz 9.1M</div>
+        <div class="pimp-l" data-i18n="pr2.implab">/ano identificados · equiv. €10.200 · Cliente real · Luanda, Angola</div>
+      </div>
+      <div class="pb">
+        <p class="pdesc" data-i18n="pr2.desc">Relógios sustentavam o negócio mas caixas e acessórios operavam com margem negativa por custos ocultos de importação. Fechos de caixa manuais impediam resposta rápida a quebras no ponto de equilíbrio.</p>
+        <div class="star">
+          <div class="sr"><div class="sk2" data-i18n="star.s">Situação</div><div class="sv" data-i18n="pr2.s">Falta de controlo de margem em tempo real. Acessórios com margem negativa por custos ocultos de importação. Fechos manuais sem alerta de desvio.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.t">Tarefa</div><div class="sv" data-i18n="pr2.t">Implementar infraestrutura de dados conectada ao POS para monitorizar receitas, custos e margens em tempo real no computador do gestor.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.a">Ações</div><div class="sv" data-i18n="pr2.a">Dashboard Live com KPIs de margem por subcategoria (Relógios vs. Acessórios). Alertas de margem crítica. Relatórios de inventário com contagem instantânea de unidades.</div></div>
+          <div class="sr"><div class="sk2" data-i18n="star.r">Resultado</div><div class="sv" data-i18n="pr2.r">Kz 5.4M (correção de preços em relógios) + Kz 2.1M (recuperação de margem em acessórios) + Kz 1.6M (eliminação de perdas de stock) = Kz 9.1M/ano.</div></div>
+        </div>
+        <div class="ptags"><span class="tt">Power BI</span><span class="tt">DAX</span><span class="tt">SQL</span><span class="tt">Python</span><span class="tt">Pandas</span><span class="tt">Matplotlib</span><span class="tt" data-i18n="tag.etl">ETL Pipeline</span></div>
+        <div class="conf-note" data-i18n="pr2.conf">Dados anonimizados por acordo de confidencialidade. Depoimento disponível mediante solicitação.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTA SISTEMAS AO VIVO -->
+  <div class="live-note reveal" data-i18n="proj.live">Sistemas verificáveis ao vivo — dashboard automatizado com ETL, análise SQL interactiva e modelos de optimização executáveis. Não são relatórios estáticos.</div>
+
+  <!-- PROJECTOS DE PORTFOLIO -->
   <div class="proj-grid">
+
+    <!-- LOGÍSTICA -->
     <div class="pcard reveal">
       <div class="ph">
         <span class="psec sl" data-i18n="p1.sector">Logística</span>
@@ -258,14 +329,19 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
           <div class="sr"><div class="sk2" data-i18n="star.a">Ações</div><div class="sv" data-i18n="p1.a">Simplex: níveis ótimos de stock (-23% excedente). Dijkstra: rotas de picking (-32% distância). Transporte: 177 → 51 rotas.</div></div>
           <div class="sr"><div class="sk2" data-i18n="star.r">Resultado</div><div class="sv" data-i18n="p1.r">€1,37B identificados. ROI 420%. Lead time: 6,0 → 4,3 dias.</div></div>
         </div>
-        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Dijkstra</span><span class="tt" data-i18n="tag.pl">Prog. Linear</span></div>
+        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Dijkstra</span><span class="tt">Python</span><span class="tt">Pandas</span></div>
         <div class="plinks">
-          <a href="https://github.com/kresio-azevedo-fernando/projecto-logistica" target="_blank" class="lb lgh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg><span data-i18n="btn.repo">Repositório</span></a>
+          <a href="https://github.com/kresio-azevedo-fernando/projecto-logistica" target="_blank" class="lb lgh">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            <span data-i18n="btn.repo">Repositório</span>
+          </a>
           <a href="https://github.com/kresio-azevedo-fernando/projecto-logistica/blob/main/LOGISTICS%20OPTIMIZATION%20REPORT.pdf" target="_blank" class="lb lpdf" data-i18n="btn.pdf">Relatório PDF</a>
-          <span class="lcs" data-i18n="btn.dash">Dashboard · em breve</span>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiNzA2M2VlZTItYmFmMi00ODdhLThhM2QtOWEyMGUwNThkZjg4IiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9" target="_blank" class="lb ldash" data-i18n="btn.dash">📊 Dashboard ao vivo</a>
         </div>
       </div>
     </div>
+
+    <!-- IMOBILIÁRIA -->
     <div class="pcard reveal">
       <div class="ph">
         <span class="psec si" data-i18n="p2.sector">Imobiliário</span>
@@ -281,14 +357,19 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
           <div class="sr"><div class="sk2" data-i18n="star.a">Ações</div><div class="sv" data-i18n="p2.a">Simplex: alocação de budget por segmento (+23% conversões). Dijkstra: rotas de visita (-28% distância).</div></div>
           <div class="sr"><div class="sk2" data-i18n="star.r">Resultado</div><div class="sv" data-i18n="p2.r">€5,8M identificados. ROI 320%. Economia €224K/ano em deslocamentos.</div></div>
         </div>
-        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Dijkstra</span><span class="tt" data-i18n="tag.seg">Segmentação</span></div>
+        <div class="ptags"><span class="tt">SQL</span><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Simplex</span><span class="tt">Dijkstra</span><span class="tt">Python</span><span class="tt">Pandas</span></div>
         <div class="plinks">
-          <a href="https://github.com/kresio-azevedo-fernando/projecto-imobiliaria" target="_blank" class="lb lgh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg><span data-i18n="btn.repo">Repositório</span></a>
+          <a href="https://github.com/kresio-azevedo-fernando/projecto-imobiliaria" target="_blank" class="lb lgh">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            <span data-i18n="btn.repo">Repositório</span>
+          </a>
           <a href="https://github.com/kresio-azevedo-fernando/projecto-imobiliaria/blob/main/Real%20Estate%20Sales%20Optimization%20Report.pdf" target="_blank" class="lb lpdf" data-i18n="btn.pdf">Relatório PDF</a>
-          <span class="lcs" data-i18n="btn.dash">Dashboard · em breve</span>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiMTQ5NGVkNGEtM2UwOS00NmIxLTgzYzgtYjg4ZWVmZjBhNmY2IiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9" target="_blank" class="lb ldash" data-i18n="btn.dash">📊 Dashboard ao vivo</a>
         </div>
       </div>
     </div>
+
+    <!-- CAFÉ -->
     <div class="pcard reveal">
       <div class="ph">
         <span class="psec sc">F&amp;B</span>
@@ -304,17 +385,22 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
           <div class="sr"><div class="sk2" data-i18n="star.a">Ações</div><div class="sv" data-i18n="p3.a">Menu Top 4 + combos (+€1,20/ticket). Staffing por pico mensal. Promoções sazonais Mar/Set/Fev.</div></div>
           <div class="sr"><div class="sk2" data-i18n="star.r">Resultado</div><div class="sv" data-i18n="p3.r">€45.200/ano: €20K (menu) + €16.8K (staffing) + €8.4K (sazonalidade).</div></div>
         </div>
-        <div class="ptags"><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt" data-i18n="tag.abc">Análise ABC</span><span class="tt" data-i18n="tag.saz">Sazonalidade</span><span class="tt">Stat. Descritiva</span></div>
+        <div class="ptags"><span class="tt">Excel</span><span class="tt">Power BI</span><span class="tt">Python</span><span class="tt">Pandas</span><span class="tt">Matplotlib</span><span class="tt" data-i18n="tag.abc">Análise ABC</span><span class="tt" data-i18n="tag.saz">Sazonalidade</span></div>
         <div class="plinks">
-          <a href="https://github.com/kresio-azevedo-fernando/projecto-cafe" target="_blank" class="lb lgh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg><span data-i18n="btn.repo">Repositório</span></a>
+          <a href="https://github.com/kresio-azevedo-fernando/projecto-cafe" target="_blank" class="lb lgh">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            <span data-i18n="btn.repo">Repositório</span>
+          </a>
           <a href="https://github.com/kresio-azevedo-fernando/projecto-cafe/blob/main/Coffee%20Report.pdf" target="_blank" class="lb lpdf" data-i18n="btn.pdf">Relatório PDF</a>
-          <span class="lcs" data-i18n="btn.dash">Dashboard · em breve</span>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhjNjRiNjAtY2Y0MS00ZWE1LTk5ZTktNWM3NWIxM2M4MzZhIiwidCI6IjY1OWNlMmI4LTA3MTQtNDE5OC04YzM4LWRjOWI2MGFhYmI1NyJ9" target="_blank" class="lb ldash" data-i18n="btn.dash">📊 Dashboard ao vivo</a>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
+<!-- RECOMENDAÇÕES -->
 <section id="recomendacoes">
   <div class="s-tag reveal" data-i18n="rec.tag">Recomendações</div>
   <h2 class="s-title reveal" data-i18n="rec.title">O que dizem<br>sobre o trabalho</h2>
@@ -330,6 +416,7 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
         <div>
           <div class="rn" data-i18n="rec1.name">Prof.ª Rita Kussebeca</div>
           <div class="rr" data-i18n="rec1.role">Professora de Base de Dados · Uniluanda (INSTIC)</div>
+          <div class="ref-note" data-i18n="rec.refnote">Referência disponível mediante solicitação</div>
         </div>
       </div>
     </div>
@@ -343,19 +430,21 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
         <div>
           <div class="rn" data-i18n="rec2.name">Prof. Josemy Quitumbo</div>
           <div class="rr" data-i18n="rec2.role">Professor de Investigação Operacional · Uniluanda (INSTIC)</div>
+          <div class="ref-note" data-i18n="rec.refnote">Referência disponível mediante solicitação</div>
         </div>
       </div>
     </div>
 
     <div class="rc reveal">
       <div class="rqm">"</div>
-      <p class="rq" data-i18n="rec3.q">Como empresária que trabalha diariamente com Power BI, posso afirmar que os dashboards produzidos não se limitam a ser visualmente competentes — respondem às perguntas certas e conduzem a decisões concretas.</p>
+      <p class="rq" data-i18n="rec3.q">O dashboard que desenvolveu para a nossa operação não é apenas visualmente claro — actualiza em tempo real e permitiu-nos identificar e corrigir margens negativas em menos de 48 horas após a implementação. É exactamente o que um gestor precisa.</p>
       <div class="rdiv"></div>
       <div class="rp">
-        <div class="rav">AC</div>
+        <div class="rav">LC</div>
         <div>
-          <div class="rn" data-i18n="rec3.name">Prof.ª Angela Capitão</div>
-          <div class="rr" data-i18n="rec3.role">Professora &amp; Empresária · Power BI</div>
+          <div class="rn" data-i18n="rec3.name">Sr. Luís C.</div>
+          <div class="rr" data-i18n="rec3.role">Gestor · Sector Retalho · Luanda, Angola</div>
+          <div class="ref-note" data-i18n="rec.refnote">Referência disponível mediante solicitação</div>
         </div>
       </div>
     </div>
@@ -368,7 +457,8 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
         <div class="rav">PL</div>
         <div>
           <div class="rn" data-i18n="rec4.name">Priscila Paulino Lopes</div>
-          <div class="rr" data-i18n="rec4.role">Proprietária · Farmácia Anlopes</div>
+          <div class="rr" data-i18n="rec4.role">Proprietária · Sector Farmacêutico · Luanda, Angola</div>
+          <div class="ref-note" data-i18n="rec.refnote">Referência disponível mediante solicitação</div>
         </div>
       </div>
     </div>
@@ -376,38 +466,30 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
   </div>
 </section>
 
+<!-- EXPERIÊNCIA -->
 <section id="experiencia">
   <div class="s-tag reveal" data-i18n="exp.tag">Experiência</div>
   <h2 class="s-title reveal" data-i18n="exp.title">Percurso<br>profissional</h2>
-  <p class="s-sub reveal" data-i18n="exp.sub">Formação e experiência aplicada em análise de dados e investigação operacional.</p>
+  <p class="s-sub reveal" data-i18n="exp.sub">Formação e experiência aplicada em análise de dados, BI e investigação operacional.</p>
   <div class="exptl">
     <div class="ei reveal">
       <div class="ep">2024 — <span data-i18n="exp.present">Presente</span></div>
       <div class="edot"></div>
       <div class="ebody">
-        <div class="erole" data-i18n="exp1.role">Data & BI Business Analyst</div>
-        <div class="eco" data-i18n="exp1.co">Portfolio independente · Freelance</div>
-        <div class="edesc" data-i18n="exp1.desc">Desenvolvimento de projetos de análise aplicados a logística, imobiliário e restauração. Aplicação de Simplex e Dijkstra para quantificar oportunidades com impacto financeiro mensurável. Relatórios executivos e dashboards Power BI entregues a profissionais e empresas.</div>
+        <div class="erole" data-i18n="exp1.role">BI & Decision Optimisation Specialist</div>
+        <div class="eco" data-i18n="exp1.co">Portfolio independente · Freelance · Luanda, Angola</div>
+        <div class="edesc" data-i18n="exp1.desc">Desenvolvimento de sistemas de inteligência de negócio para clientes em logística, imobiliário, retalho farmacêutico e retalho de luxo. Aplicação de Simplex e Dijkstra para optimização com impacto financeiro mensurável. Dashboards Power BI em tempo real com pipeline ETL automatizado em Python.</div>
       </div>
-    </div>
-    <div class="ei reveal">
-      <div class="ep"></div>
-      <div class="edot"></div>
-      <div class="ebody"><div class="erole"></div><div class="eco"></div><div class="edesc"></div></div>
-    </div>
-    <div class="ei reveal">
-      <div class="ep"></div>
-      <div class="edot"></div>
-      <div class="ebody"><div class="erole"></div><div class="eco"></div><div class="edesc"></div></div>
     </div>
   </div>
 </section>
 
+<!-- CONTATO -->
 <section id="contato">
   <div class="cinner">
     <div class="s-tag reveal" style="justify-content:center" data-i18n="contact.tag">Contato</div>
     <h2 class="s-title reveal" data-i18n="contact.title">Vamos trabalhar<br>juntos</h2>
-    <p class="s-sub reveal" style="margin:0 auto 0" data-i18n="contact.sub">Disponível para projetos freelance, consultoria e posições full-time.</p>
+    <p class="s-sub reveal" style="margin:0 auto 0" data-i18n="contact.sub">Disponível para projetos freelance, consultoria e posições full-time — remoto e híbrido.</p>
     <div class="cemail reveal"><a href="mailto:kresiofernando@hotmail.com">kresiofernando@hotmail.com</a></div>
     <div class="clinks reveal">
       <a href="https://www.linkedin.com/in/kresio-bi-business-data-analyst/" target="_blank" class="btn-p">LinkedIn</a>
@@ -417,7 +499,7 @@ footer{padding:1.4rem 5%;border-top:1px solid var(--border);display:flex;justify
 </section>
 
 <footer>
-  <span>Kresio Azevedo Fernando · Data & BI Analyst</span>
+  <span>Kresio Azevedo Fernando · BI & Decision Optimisation Specialist</span>
   <span>kresio-azevedo-fernando.github.io</span>
   <span>© 2025</span>
 </footer>
@@ -427,23 +509,45 @@ const i18n = {
   pt: {
     "nav.sobre":"Sobre","nav.projetos":"Projetos","nav.rec":"Recomendações",
     "nav.exp":"Experiência","nav.contato":"Contato","nav.cta":"Contactar",
-    "hero.tag":"Analista de Dados · BI · Negócios","hero.role":"Data & BI Business Analyst",
-    "hero.desc":"Transformo dados em decisões que geram impacto mensurável. Do diagnóstico à ação — análise descritiva, diagnóstica e prescritiva reforçada por modelos de otimização matemática.",
+    "hero.tag":"BI · Decisão · Optimização Operacional",
+    "hero.role":"BI & Decision Optimisation Specialist",
+    "hero.desc":"Identifico onde a empresa perde dinheiro, elimino desperdícios operacionais e optimizo o fluxo para aumentar lucro sem comprometer a operação.",
     "hero.btn1":"Ver Projetos",
     "hero.n1":"Impacto · Logística","hero.n2":"Impacto · Imobiliário","hero.n3":"Impacto · Café",
     "sobre.tag":"Sobre Mim","sobre.title":"Dados que<br>movem decisões",
-    "sobre.p1":"Sou <strong>Kresio Azevedo Fernando</strong>, Analista de Dados, BI e Negócios focado em transformar dados brutos em decisões estratégicas com impacto financeiro mensurável.",
-    "sobre.p2":"A minha abordagem cobre os três níveis: <strong>descritiva</strong> (o que aconteceu), <strong>diagnóstica</strong> (porque aconteceu) e <strong>prescritiva</strong> (o que fazer) — com a diferença de aplicar modelos de <strong>Investigação Operacional</strong> (Simplex e Dijkstra) para maximizar o impacto das recomendações.",
-    "sobre.p3":"Comunicação plena e proficiência técnica em <strong>português, inglês e francês</strong>, assegurando fluidez estratégica em operações globais e na análise de dados multiculturais.",
+    "sobre.p1":"Sou <strong>Kresio Azevedo Fernando</strong>, BI & Decision Optimisation Specialist. Não entrego dashboards — entrego sistemas de inteligência de negócio que identificam onde a empresa perde dinheiro e prescrevem as decisões que param essa perda.",
+    "sobre.p2":"A minha metodologia cobre quatro níveis: <strong>descritiva</strong> (o que aconteceu), <strong>diagnóstica</strong> (porque aconteceu), <strong>prescritiva</strong> (o que fazer) e <strong>optimização matemática</strong> (Simplex e Dijkstra) para maximizar o impacto das decisões.",
+    "sobre.p3":"Comunicação plena em <strong>português e inglês</strong>, com entregáveis em ambos os idiomas — relatório executivo, dashboard interactivo e apresentação McKinsey SCR.",
     "sobre.sklabel":"Competências técnicas",
     "sk.desc":"Análise Descritiva","sk.diag":"Análise Diagnóstica","sk.presc":"Análise Prescritiva",
     "sk.stat":"Estatística Descritiva","sk.pl":"Programação Linear","sk.grafos":"Teoria dos Grafos",
-    "sk.clean":"Limpeza de Dados","sk.pivot":"Tabelas Dinâmicas",
-    "stats.proj":"Projetos no portfolio","stats.opp":"Oportunidades identificadas",
-    "stats.roi":"ROI médio dos modelos","stats.rec":"Recomendações recebidas",
-    "lang.title":"Idiomas","lang.pt":"Nativo","lang.en":"Profissional","lang.fr":"Profissional",
+    "sk.etl":"Pipeline ETL",
+    "stats.proj":"Projetos no portfolio","stats.real":"Projetos reais entregues",
+    "stats.opp":"Oportunidades identificadas","stats.roi":"ROI médio dos modelos",
+    "stats.rec":"Recomendações recebidas",
+    "lang.title":"Idiomas","lang.pt":"Nativo","lang.en":"Profissional",
     "proj.tag":"Portfolio","proj.title":"Projetos com<br>impacto real",
-    "proj.sub":"Cada projeto entrega análise descritiva, diagnóstica e prescritiva com ações concretas e impacto financeiro quantificado.",
+    "proj.sub":"Sistemas verificáveis ao vivo — não screenshots. Cada projecto inclui dashboard interactivo, análise SQL e modelos de optimização executáveis.",
+    "proj.live":"Sistemas verificáveis ao vivo — dashboard automatizado com ETL, análise SQL interactiva e modelos de optimização executáveis. Não são relatórios estáticos.",
+    "real.badge":"Projecto Real",
+    "pr1.sector":"Retalho Farmacêutico",
+    "pr1.title":"Farmácia · Optimização de Margem & Fluxo",
+    "pr1.implab":"/ano identificados · equiv. €16.500 · Cliente real · Luanda, Angola",
+    "pr1.desc":"Quebras de caixa ocultas representavam 18% das saídas de inventário sem registo. Capital imobilizado em produtos de baixa rotação gerava 120% de variação no lucro entre o melhor e o pior mês.",
+    "pr1.s":"Levantamentos informais de stock para familiares/amigos sem registo financeiro + capital imobilizado em produtos de baixa rotação.",
+    "pr1.t":"Identificar fugas de stock ocultas, auditar a margem real por lote e aplicar Simplex para maximizar o lucro sob restrições de capital.",
+    "pr1.a":"Bloqueio de inventário com auditoria biométrica no POS. Modelo Simplex para reajuste do mix de compras (foco em genéricos de alta margem). Indexação de preços ao custo de reposição cambial.",
+    "pr1.r":"Kz 8.2M (recuperação de stock) + Kz 4.1M (optimização Simplex) + Kz 2.5M (ajuste cambial) = Kz 14.8M/ano.",
+    "pr1.conf":"Dados anonimizados por acordo de confidencialidade. Depoimento disponível mediante solicitação.",
+    "pr2.sector":"Retalho de Luxo & Acessórios",
+    "pr2.title":"Relojoaria · BI & Monitorização em Tempo Real",
+    "pr2.implab":"/ano identificados · equiv. €10.200 · Cliente real · Luanda, Angola",
+    "pr2.desc":"Relógios sustentavam o negócio mas caixas e acessórios operavam com margem negativa por custos ocultos de importação. Fechos de caixa manuais impediam resposta rápida a quebras no ponto de equilíbrio.",
+    "pr2.s":"Falta de controlo de margem em tempo real. Acessórios com margem negativa por custos ocultos de importação. Fechos manuais sem alerta de desvio.",
+    "pr2.t":"Implementar infraestrutura de dados conectada ao POS para monitorizar receitas, custos e margens em tempo real no computador do gestor.",
+    "pr2.a":"Dashboard Live com KPIs de margem por subcategoria (Relógios vs. Acessórios). Alertas de margem crítica. Relatórios de inventário com contagem instantânea de unidades.",
+    "pr2.r":"Kz 5.4M (correção de preços em relógios) + Kz 2.1M (recuperação de margem em acessórios) + Kz 1.6M (eliminação de perdas de stock) = Kz 9.1M/ano.",
+    "pr2.conf":"Dados anonimizados por acordo de confidencialidade. Depoimento disponível mediante solicitação.",
     "p1.sector":"Logística","p1.title":"Otimização Logística com Investigação Operacional",
     "p1.implab":"ganho adicional com Simplex + Dijkstra (+30%)",
     "p1.desc":"Armazém com 3.204 produtos, taxa de atendimento de 80% e 14.746 ruturas/mês. A aplicação de modelos matemáticos elevou o impacto de €1,05B para €1,37B.",
@@ -466,53 +570,72 @@ const i18n = {
     "p3.a":"Menu Top 4 + combos (+€1,20/ticket). Staffing por pico mensal. Promoções sazonais Mar/Set/Fev.",
     "p3.r":"€45.200/ano: €20K (menu) + €16.8K (staffing) + €8.4K (sazonalidade).",
     "star.s":"Situação","star.t":"Tarefa","star.a":"Ações","star.r":"Resultado",
-    "btn.repo":"Repositório","btn.pdf":"Relatório PDF","btn.dash":"Dashboard · em breve",
-    "tag.pl":"Prog. Linear","tag.seg":"Segmentação","tag.abc":"Análise ABC","tag.saz":"Sazonalidade",
+    "btn.repo":"Repositório","btn.pdf":"Relatório PDF","btn.dash":"📊 Dashboard ao vivo",
+    "tag.abc":"Análise ABC","tag.saz":"Sazonalidade","tag.etl":"ETL Pipeline",
     "rec.tag":"Recomendações","rec.title":"O que dizem<br>sobre o trabalho",
     "rec.sub":"Validação académica e de negócio — professores universitários e profissionais do sector.",
+    "rec.refnote":"Referência disponível mediante solicitação",
     "rec1.q":"Demonstra uma capacidade notável de estruturar problemas de base de dados complexos e traduzir os resultados em linguagem de negócio acessível. Os seus projetos revelam maturidade analítica acima do esperado para este nível.",
-    "rec1.name":"Prof.ª Rita Kussebeca",
-    "rec1.role":"Professora de Base de Dados · Uniluanda (INSTIC)",
+    "rec1.name":"Prof.ª Rita Kussebeca","rec1.role":"Professora de Base de Dados · Uniluanda (INSTIC)",
     "rec2.q":"A aplicação dos algoritmos de otimização a casos reais de negócio — nomeadamente Simplex e Dijkstra — foi feita com rigor e com uma clareza na comunicação dos resultados que raramente vejo em estudantes desta fase.",
-    "rec2.name":"Prof. Josemy Quitumbo",
-    "rec2.role":"Professor de Investigação Operacional · Uniluanda (INSTIC)",
-    "rec3.q":"Como empresária que trabalha diariamente com Power BI, posso afirmar que os dashboards produzidos não se limitam a ser visualmente competentes — respondem às perguntas certas e conduzem a decisões concretas.",
-    "rec3.name":"Prof.ª Angela Capitão",
-    "rec3.role":"Professora & Empresária · Power BI",
+    "rec2.name":"Prof. Josemy Quitumbo","rec2.role":"Professor de Investigação Operacional · Uniluanda (INSTIC)",
+    "rec3.q":"O dashboard que desenvolveu para a nossa operação não é apenas visualmente claro — actualiza em tempo real e permitiu-nos identificar e corrigir margens negativas em menos de 48 horas após a implementação. É exactamente o que um gestor precisa.",
+    "rec3.name":"Sr. Luís C.","rec3.role":"Gestor · Sector Retalho · Luanda, Angola",
     "rec4.q":"Quando me apresentou a análise da farmácia percebi imediatamente o valor prático. Identificou padrões de sazonalidade de procura que eu nunca tinha conseguido ver nos meus relatórios habituais. Recomendo sem reservas.",
-    "rec4.name":"Priscila Paulino Lopes",
-    "rec4.role":"Proprietária · Farmácia Anlopes",
+    "rec4.name":"Priscila Paulino Lopes","rec4.role":"Proprietária · Sector Farmacêutico · Luanda, Angola",
     "exp.tag":"Experiência","exp.title":"Percurso<br>profissional",
-    "exp.sub":"Formação e experiência aplicada em análise de dados e investigação operacional.",
+    "exp.sub":"Formação e experiência aplicada em análise de dados, BI e investigação operacional.",
     "exp.present":"Presente",
-    "exp1.role":"Data & BI Business Analyst","exp1.co":"Portfolio independente · Freelance",
-    "exp1.desc":"Desenvolvimento de projetos de análise aplicados a logística, imobiliário e restauração. Aplicação de Simplex e Dijkstra para quantificar oportunidades com impacto financeiro mensurável. Relatórios executivos e dashboards Power BI entregues a profissionais e empresas.",
+    "exp1.role":"BI & Decision Optimisation Specialist","exp1.co":"Portfolio independente · Freelance · Luanda, Angola",
+    "exp1.desc":"Desenvolvimento de sistemas de inteligência de negócio para clientes em logística, imobiliário, retalho farmacêutico e retalho de luxo. Aplicação de Simplex e Dijkstra para optimização com impacto financeiro mensurável. Dashboards Power BI em tempo real com pipeline ETL automatizado em Python.",
     "contact.tag":"Contato","contact.title":"Vamos trabalhar<br>juntos",
-    "contact.sub":"Disponível para projetos freelance, consultoria e posições full-time."
+    "contact.sub":"Disponível para projetos freelance, consultoria e posições full-time — remoto e híbrido."
   },
   en: {
     "nav.sobre":"About","nav.projetos":"Projects","nav.rec":"Testimonials",
     "nav.exp":"Experience","nav.contato":"Contact","nav.cta":"Get in Touch",
-    "hero.tag":"Data Analyst · BI · Business","hero.role":"Data & BI Business Analyst",
-    "hero.desc":"I turn data into decisions that generate measurable impact. From diagnosis to action — descriptive, diagnostic and prescriptive analytics reinforced by mathematical optimisation models.",
+    "hero.tag":"BI · Decision · Operational Optimisation",
+    "hero.role":"BI & Decision Optimisation Specialist",
+    "hero.desc":"I identify where companies lose money, eliminate operational waste and optimise flow to increase profit without compromising operations.",
     "hero.btn1":"View Projects",
     "hero.n1":"Impact · Logistics","hero.n2":"Impact · Real Estate","hero.n3":"Impact · Coffee",
     "sobre.tag":"About Me","sobre.title":"Data that<br>drives decisions",
-    "sobre.p1":"I am <strong>Kresio Azevedo Fernando</strong>, a Data, BI & Business Analyst focused on turning raw data into strategic decisions with measurable financial impact.",
-    "sobre.p2":"My approach covers three levels: <strong>descriptive</strong> (what happened), <strong>diagnostic</strong> (why it happened) and <strong>prescriptive</strong> (what to do) — with the differentiator of applying <strong>Operations Research</strong> models (Simplex and Dijkstra) to maximise the impact of recommendations.",
-    "sobre.p3":"Full communication and technical proficiency in <strong>Portuguese, English and French</strong>, ensuring strategic fluency in global operations and multicultural data analysis.",
+    "sobre.p1":"I am <strong>Kresio Azevedo Fernando</strong>, BI & Decision Optimisation Specialist. I do not deliver dashboards — I build business intelligence systems that identify where companies lose money and prescribe the decisions that stop the loss.",
+    "sobre.p2":"My methodology covers four levels: <strong>descriptive</strong> (what happened), <strong>diagnostic</strong> (why it happened), <strong>prescriptive</strong> (what to do) and <strong>mathematical optimisation</strong> (Simplex and Dijkstra) to maximise decision impact.",
+    "sobre.p3":"Full proficiency in <strong>Portuguese and English</strong>, with deliverables in both languages — executive report, interactive dashboard and McKinsey SCR presentation.",
     "sobre.sklabel":"Technical skills",
     "sk.desc":"Descriptive Analytics","sk.diag":"Diagnostic Analytics","sk.presc":"Prescriptive Analytics",
     "sk.stat":"Descriptive Statistics","sk.pl":"Linear Programming","sk.grafos":"Graph Theory",
-    "sk.clean":"Data Cleaning","sk.pivot":"Pivot Tables",
-    "stats.proj":"Portfolio projects","stats.opp":"Opportunities identified",
-    "stats.roi":"Average model ROI","stats.rec":"Testimonials received",
-    "lang.title":"Languages","lang.pt":"Native","lang.en":"Professional","lang.fr":"Professional",
+    "sk.etl":"ETL Pipeline",
+    "stats.proj":"Portfolio projects","stats.real":"Real projects delivered",
+    "stats.opp":"Opportunities identified","stats.roi":"Average model ROI",
+    "stats.rec":"Testimonials received",
+    "lang.title":"Languages","lang.pt":"Native","lang.en":"Professional",
     "proj.tag":"Portfolio","proj.title":"Projects with<br>real impact",
-    "proj.sub":"Each project delivers descriptive, diagnostic and prescriptive analysis with concrete actions and quantified financial impact.",
+    "proj.sub":"Live verifiable systems — not screenshots. Each project includes an interactive dashboard, SQL analysis and executable optimisation models.",
+    "proj.live":"Live verifiable systems — automated dashboard with ETL, interactive SQL analysis and executable optimisation models. Not static reports.",
+    "real.badge":"Real Project",
+    "pr1.sector":"Pharmaceutical Retail",
+    "pr1.title":"Pharmacy · Margin & Flow Optimisation",
+    "pr1.implab":"/year identified · equiv. €16,500 · Real client · Luanda, Angola",
+    "pr1.desc":"Hidden cash shortfalls represented 18% of inventory outflows with no financial record. Capital tied up in low-turnover products caused 120% profit variation between best and worst month.",
+    "pr1.s":"Informal stock withdrawals for family/friends with no financial record + capital tied up in low-turnover products.",
+    "pr1.t":"Identify hidden stock leaks, audit real margin per batch and apply Simplex to maximise profit under capital constraints.",
+    "pr1.a":"Inventory lockdown with biometric POS audit. Simplex model for purchase mix rebalancing (focus on high-margin generics). Price indexation to FX replacement cost.",
+    "pr1.r":"Kz 8.2M (stock recovery) + Kz 4.1M (Simplex optimisation) + Kz 2.5M (FX adjustment) = Kz 14.8M/year.",
+    "pr1.conf":"Data anonymised under confidentiality agreement. Testimonial available upon request.",
+    "pr2.sector":"Luxury Retail & Accessories",
+    "pr2.title":"Watch Store · BI & Real-Time Monitoring",
+    "pr2.implab":"/year identified · equiv. €10,200 · Real client · Luanda, Angola",
+    "pr2.desc":"Watches sustained the business but accessories operated at negative margin due to hidden import costs. Manual cash closings prevented rapid response to break-even deviations.",
+    "pr2.s":"No real-time margin control. Accessories at negative margin due to hidden import costs. Manual closings with no deviation alerts.",
+    "pr2.t":"Implement a data infrastructure connected to POS to monitor revenue, costs and margins in real time on the manager's screen.",
+    "pr2.a":"Live Dashboard with margin KPIs by subcategory (Watches vs. Accessories). Critical margin alerts. Inventory reports with instant unit counts.",
+    "pr2.r":"Kz 5.4M (watch price correction) + Kz 2.1M (accessories margin recovery) + Kz 1.6M (stock loss elimination) = Kz 9.1M/year.",
+    "pr2.conf":"Data anonymised under confidentiality agreement. Testimonial available upon request.",
     "p1.sector":"Logistics","p1.title":"Logistics Optimisation with Operations Research",
     "p1.implab":"additional gain with Simplex + Dijkstra (+30%)",
-    "p1.desc":"Warehouse with 3,204 products, 80% service level and 14,746 stockouts/month. Applying mathematical models increased the impact from €1.05B to €1.37B.",
+    "p1.desc":"Warehouse with 3,204 products, 80% service level and 14,746 stockouts/month. Applying mathematical models increased impact from €1.05B to €1.37B.",
     "p1.s":"Logistics cost €17.7B/year. 80% service level — stockouts generating €630M/year in revenue losses.",
     "p1.t":"Identify root causes of stockouts and optimise inventory, layout and routes using mathematical models.",
     "p1.a":"Simplex: optimal stock levels (-23% surplus). Dijkstra: picking routes (-32% distance). Transport: 177 → 51 routes.",
@@ -532,29 +655,26 @@ const i18n = {
     "p3.a":"Top 4 menu + premium combos (+€1.20/ticket). Smart staffing by monthly peak. Seasonal promotions Mar/Sep/Feb.",
     "p3.r":"€45,200/year: €20K (menu) + €16.8K (staffing) + €8.4K (seasonality).",
     "star.s":"Situation","star.t":"Task","star.a":"Actions","star.r":"Result",
-    "btn.repo":"Repository","btn.pdf":"PDF Report","btn.dash":"Dashboard · coming soon",
-    "tag.pl":"Linear Prog.","tag.seg":"Segmentation","tag.abc":"ABC Analysis","tag.saz":"Seasonality",
+    "btn.repo":"Repository","btn.pdf":"PDF Report","btn.dash":"📊 Live Dashboard",
+    "tag.abc":"ABC Analysis","tag.saz":"Seasonality","tag.etl":"ETL Pipeline",
     "rec.tag":"Testimonials","rec.title":"What they say<br>about the work",
     "rec.sub":"Academic and business validation — university professors and industry professionals.",
+    "rec.refnote":"Reference available upon request",
     "rec1.q":"Demonstrates a remarkable ability to structure complex database problems and translate results into accessible business language. The projects reveal analytical maturity above what is expected at this level.",
-    "rec1.name":"Prof. Rita Kussebeca",
-    "rec1.role":"Database Professor · Uniluanda (INSTIC)",
+    "rec1.name":"Prof. Rita Kussebeca","rec1.role":"Database Professor · Uniluanda (INSTIC)",
     "rec2.q":"The application of optimisation algorithms to real business cases — namely Simplex and Dijkstra — was done with rigour and a clarity in communicating results that I rarely see in students at this stage.",
-    "rec2.name":"Prof. Josemy Quitumbo",
-    "rec2.role":"Operations Research Professor · Uniluanda (INSTIC)",
-    "rec3.q":"As a business owner who works with Power BI daily, I can confirm that the dashboards produced are not just visually competent — they answer the right questions and lead to concrete decisions.",
-    "rec3.name":"Prof. Angela Capitão",
-    "rec3.role":"Professor & Business Owner · Power BI",
+    "rec2.name":"Prof. Josemy Quitumbo","rec2.role":"Operations Research Professor · Uniluanda (INSTIC)",
+    "rec3.q":"The dashboard developed for our operation is not just visually clear — it updates in real time and allowed us to identify and correct negative margins in less than 48 hours after implementation. That is exactly what a manager needs.",
+    "rec3.name":"Mr. Luís C.","rec3.role":"Manager · Retail Sector · Luanda, Angola",
     "rec4.q":"When the pharmacy analysis was presented to me, I immediately understood the practical value. It identified demand seasonality patterns I had never been able to see in my regular reports. I recommend without reservation.",
-    "rec4.name":"Priscila Paulino Lopes",
-    "rec4.role":"Owner · Farmácia Anlopes",
+    "rec4.name":"Priscila Paulino Lopes","rec4.role":"Owner · Pharmaceutical Sector · Luanda, Angola",
     "exp.tag":"Experience","exp.title":"Professional<br>background",
-    "exp.sub":"Training and applied experience in data analysis and operations research.",
+    "exp.sub":"Training and applied experience in data analysis, BI and operations research.",
     "exp.present":"Present",
-    "exp1.role":"Data & BI Business Analyst","exp1.co":"Independent portfolio · Freelance",
-    "exp1.desc":"Development of analytics projects applied to logistics, real estate and hospitality. Application of Simplex and Dijkstra to quantify opportunities with measurable financial impact. Executive reports and Power BI dashboards delivered to professionals and companies.",
+    "exp1.role":"BI & Decision Optimisation Specialist","exp1.co":"Independent portfolio · Freelance · Luanda, Angola",
+    "exp1.desc":"Development of business intelligence systems for clients in logistics, real estate, pharmaceutical retail and luxury retail. Application of Simplex and Dijkstra for optimisation with measurable financial impact. Real-time Power BI dashboards with automated Python ETL pipelines.",
     "contact.tag":"Contact","contact.title":"Let's work<br>together",
-    "contact.sub":"Available for freelance projects, consulting contracts and full-time positions."
+    "contact.sub":"Available for freelance projects, consulting contracts and full-time positions — remote and hybrid."
   }
 };
 
